@@ -1,21 +1,23 @@
 class window.Game
-  possible_gestures: ["rock","paper","scizzors","lizard","spock"]
   throw_history:[]
   winner_history:[]
   
-  player:null
+  user:null
   opponent:null
 
+  over:false
 
-  constructor:(@player, @opponent, @rounds=5)->
+
+  constructor:(@user, @opponent, @rounds=5)->
 
   game_over:()->
-    if @player.round_wins > @opponent.round_wins
-      @winner = @player
+    @over = true
+    if @user.round_wins > @opponent.round_wins
+      @winner = @user
       @loser  = @opponent
     else
       @winner = @opponent
-      @loser  = @player
+      @loser  = @user
 
     @winner.wins_game()
     @loser.loses_game()
@@ -23,33 +25,29 @@ class window.Game
     @winner
 
 
-  player_throw:(gesture)->
-    player_throw = new Throw(gesture)
-    opponent_throw = new Throw(@random_gesture())
+  user_throw:(gesture)->
+    return false if @over
 
-    @throw_history.push [player_throw,opponent_throw]
+    user_throw      = new Throw(gesture)
+    opponent_throw  = new Throw()
 
-    round_winner
-    round_loser
+    @throw_history.push [user_throw,opponent_throw]
 
-    if player_throw.does_beat(opponent_throw)
-      round_winner  = @player
+    if user_throw.does_beat(opponent_throw)
+      round_winner  = @user
       round_loser   = @opponent
     else
       round_winner  = @opponent
-      round_loser   = @player
+      round_loser   = @user
 
     round_winner.wins_round()
-    round_loser.wins_round()
+    round_loser.loses_round()
 
     @winner_history.push round_winner
 
     @game_over() if @count_rounds() > @rounds
 
-    return 
+    return round_winner
 
   count_rounds:()->
     @winner_history.length
-
-  random_gesture:()->
-    @possible_gestures[Math.floor(Math.random()*@possible_gestures.length)]

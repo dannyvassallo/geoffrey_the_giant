@@ -1,7 +1,19 @@
 class window.Throw
+
+  # class properties
+  @possible_gestures:["rock","paper","scizzors","lizard","spock"]
+
+  # class methods
+  @random_gesture:()->
+    @possible_gestures[Math.floor(Math.random()*@possible_gestures.length)]
+
+
+  # instance properties
   beats: []
 
-  constructor:(@type)->
+  # instance methods
+  constructor:(@type=null)->
+    @type ||= Throw.random_gesture()
     @beats = switch @type
       when "rock"     then ["scizzors","lizard"]
       when "paper"    then ["rock","spock"]
