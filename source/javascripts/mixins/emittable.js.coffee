@@ -1,6 +1,17 @@
 window.Emittable =
   ee:null
-  
-  contsruct_emittable:()->
-    @ee ||= new EventEmitter
+  emittable:()->
+    @ee ?= new EventEmitter
     
+  on:()->
+    @ee.on arguments...
+
+  off:()->
+    @ee.off arguments...
+
+  trigger:()->
+    @ee.trigger arguments...
+
+  removeAllListeners:()->
+    @ee.removeAllListeners arguments...
+

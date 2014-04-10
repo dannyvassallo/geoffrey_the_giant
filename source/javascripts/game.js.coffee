@@ -1,17 +1,19 @@
 class window.Game extends Module
+  # includes
   @include Emittable
 
-  throw_history:[]
-  winner_history:[]
+  # class properties
+  @history:[]
   
-  user:null
-  opponent:null
 
-  over:false
-
-
+  # instance methods
   constructor:(@user, @opponent, @rounds=5)->
-    @contsruct_emittable()
+    @throw_history  = []
+    @winner_history = []
+    @over           = false
+
+    @emittable()
+    Game.history.push this
 
   game_over:()->
     @over = true
@@ -22,10 +24,14 @@ class window.Game extends Module
       @winner = @opponent
       @loser  = @user
 
+    @trigger("game_over.before", [@winner, @loser])
+
     @winner.wins_game()
     @loser.loses_game()
 
-    @ee.removeAllListeners()
+    @trigger("game_over.after", [@winner, @loser])
+
+    @removeAllListeners()
 
     return @winner
 
@@ -33,8 +39,8 @@ class window.Game extends Module
   user_throw:(gesture)->
     return false if @over
 
-    user_throw      = new Throw(gesture)
-    opponent_throw  = new Throw()
+    user_throw      = @user.throw(gesture)
+    opponent_throw  = @opponent.throw(Throw.random_gesture(gesture))
 
     @throw_history.push [user_throw,opponent_throw]
 
@@ -45,12 +51,14 @@ class window.Game extends Module
       round_winner  = @opponent
       round_loser   = @user
 
-    @ee.trigger("throw", [round_winner, round_loser])
+    @trigger("throw.before", [round_winner, round_loser])
 
     round_winner.wins_round()
     round_loser.loses_round()
 
     @winner_history.push round_winner
+
+    @trigger("throw.after", [round_winner, round_loser])
 
     @game_over() if @count_rounds() >= @rounds
 
@@ -58,6 +66,3 @@ class window.Game extends Module
 
   count_rounds:()->
     @winner_history.length
-
-  on:()->
-    @ee.on arguments...

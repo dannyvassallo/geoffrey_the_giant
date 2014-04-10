@@ -1,4 +1,4 @@
-//= require EventEmitter.min
+//= require vendor/EventEmitter.min
 //= require mixins/module
 //= require mixins/emittable
 //  
@@ -6,5 +6,6 @@
 //= require player
 //= require throw
 //= require driver
+//= require app
 //  
 //= require_tree .

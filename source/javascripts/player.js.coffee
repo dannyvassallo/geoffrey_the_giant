@@ -1,15 +1,15 @@
 class window.Player
-  animator:null
-  name:null
 
-  round_wins:0
-  round_losses:0
+  constructor:(@name=null)->
+    @round_wins   = 0
+    @round_losses = 0
+    @game_wins    = 0
+    @game_losses  = 0
 
-  game_wins:0
-  game_losses:0
-
-  constructor:(@name=null,@animator=null)->
     @prepare_for_new_game()
+
+  throw:(gesture)->
+    @last_throw = new Throw(gesture)
 
   wins_round:()->
     @round_wins++
