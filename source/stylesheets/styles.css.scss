@@ -1,17 +1,17 @@
 body {
-}
-
-.welcome{
-  
   text-align: center;
-
-  h1 {
-    color: red;
-
-    // the ampersand means "this" essentially
-    &:after {
-      content: " See how you can nest this shit??";
-    }
-  }
-
+  background-color: white;
+}
+#geoff {
+  background-color: black;
+  width: 250px;
+  height:250px;
+}
+.buttons {
+  $button-width: 640px;
+  position: absolute;
+  bottom:0;
+  width:640px;
+  left:50%;
+  margin-left: -($button-width / 2);
 }
