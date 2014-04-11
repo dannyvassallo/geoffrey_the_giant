@@ -1,7 +1,7 @@
 class window.Throw
 
   # class properties
-  @possible_gestures:["rock","paper","scizzors","lizard","spock"]
+  @possible_gestures:["rock","paper","scissors","lizard","spock"]
 
   # class methods
   @random_gesture:(exclude=null)->
@@ -19,11 +19,11 @@ class window.Throw
   constructor:(@type=null)->
     @type ||= Throw.random_gesture()
     @beats = switch @type
-      when "rock"     then ["scizzors","lizard"]
+      when "rock"     then ["scissors","lizard"]
       when "paper"    then ["rock","spock"]
-      when "scizzors" then ["paper","lizard"]
+      when "scissors" then ["paper","lizard"]
       when "lizard"   then ["paper","spock"]
-      when "spock"    then ["rock","scizzors"]
+      when "spock"    then ["rock","scissors"]
 
   does_tie:(other_throw)->
     return other_throw.type == @type

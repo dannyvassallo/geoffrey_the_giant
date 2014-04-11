@@ -1,1 +1,2 @@
-window.driver = new Driver("Sarah")
+$ ->
+  window.driver = new Driver("Sarah")
