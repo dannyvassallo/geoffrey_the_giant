@@ -10,8 +10,40 @@ body {
 .buttons {
   $button-width: 640px;
   position: absolute;
+  height: 90px;
   bottom:0;
   width:640px;
   left:50%;
   margin-left: -($button-width / 2);
+}
+
+.action-btn-rock{
+  display: inline-block;
+  width: 85px;
+  height: 85px;
+  background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/rockbutton.png") 
+}
+.action-btn-paper{
+  display: inline-block;
+  width: 85px;
+  height: 85px;
+  background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/paperbutton.png") 
+}
+.action-btn-scissors{
+  display: inline-block;
+  width: 85px;
+  height: 85px;
+  background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/scissorsbutton.png") 
+}
+.action-btn-lizard{
+  display: inline-block;
+  width: 85px;
+  height: 85px;
+  background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/lizardbutton.png") 
+}
+.action-btn-spock{
+  display: inline-block;
+  width: 85px;
+  height: 85px;
+  background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/spockbutton.png") 
 }
