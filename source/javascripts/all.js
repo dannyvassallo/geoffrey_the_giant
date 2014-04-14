@@ -1,5 +1,5 @@
 //= require vendor/jquery.min
-//= require vendor/eventemitter.min
+//= require vendor/EventEmitter.min
 //= require mixins/module
 //= require mixins/emittable
 //= require mixins/animator
