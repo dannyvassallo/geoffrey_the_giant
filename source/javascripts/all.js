@@ -1,3 +1,4 @@
+//= require vendor/underscore.min
 //= require vendor/jquery.min
 //= require vendor/EventEmitter.min
 //= require mixins/module
