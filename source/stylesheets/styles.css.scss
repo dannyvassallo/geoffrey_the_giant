@@ -3,6 +3,13 @@ body {
   background-color: white;
 }
 
+#masthead{
+
+width: 100%;
+background-position: center;
+background-repeat: no-repeat;
+background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/mastheadbackground.jpg")
+}
 
 #game-container{
   position: relative;
@@ -11,6 +18,10 @@ body {
   height: 860px;
 }
 
+#player{
+
+
+}
 
 #geoff {
   display: inline-block;
@@ -57,5 +68,4 @@ body {
   background-position: center; 
   background-repeat: repeat-x;
 }
-
 

@@ -3,7 +3,8 @@
 //= require vendor/event_emitter.min
 //= require mixins/module
 //= require mixins/emittable
-//  
+//
+//= require youtube  
 //= require animated_element
 //= require app_animator
 //= require game
