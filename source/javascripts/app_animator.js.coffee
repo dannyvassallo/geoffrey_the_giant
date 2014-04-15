@@ -2,8 +2,8 @@ class window.AppAnimator extends Module
 
   constructor:(@queue="fx")->
     @geoff  = new AnimatedElement "#geoff",
-                  duration: 1000,
-                  queue:    "fx"
+                    duration: 1000,
+                    queue:    "fx"
 
     @game  = new AnimatedElement "#game-container",
                   duration: 2200,
