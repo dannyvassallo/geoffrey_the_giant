@@ -1,9 +1,10 @@
+//= require vendor/underscore.min
 //= require vendor/jquery.min
 //= require vendor/event_emitter.min
 //= require mixins/module
 //= require mixins/emittable
-//= require mixins/animator
 //  
+//= require animated_element
 //= require app_animator
 //= require game
 //= require player

@@ -1,38 +1,38 @@
 class window.AppAnimator extends Module
-  @include Animator
 
   constructor:(@queue="fx")->
-    @duration = 1000
-    @$buttons = $(".buttons")
-    @$body    = $("body")
-    @$geoff   = $("#geoff")
+    @geoff  = new AnimatedElement "#geoff",
+                  duration: 1000,
+                  queue:    "fx"
 
   animate_throws:(user_throw, opponent_throw)->
-    @enqueue @$geoff, ()=>
-      @$geoff.css "background-color": "grey"
-
-    @delay @$geoff, @duration
+    _(3).times ()=>
+      @geoff
+        .enqueue(($el)=>
+          $el.css "background-color": "grey")
+        .delay(200)
+        .enqueue(($el)=>
+          $el.css "background-color": "black")
+        .delay(200)
 
   animate_round_win:()->
-    @enqueue @$geoff, ()=>
-      @$geoff.css "background-color": "green"
-    
-    @delay @$geoff, @duration
+    @geoff
+      .enqueue(($el)=>
+        $el.css "background-color": "green")
+      .delay()
 
   animate_round_loss:()->
-    @enqueue @$geoff, ()=>
-      @$geoff.css "background-color": "red"
-    
-    @delay @$geoff, @duration
+    @geoff
+      .enqueue(($el)=>
+        $el.css "background-color": "red")
+      .delay()
 
   animate_new_round:(callback=null)->
-    @enqueue @$geoff, ()=>
-      @$geoff.css "background-color": "black"
-    
-    @delay @$geoff, @duration
-
-    @enqueue @$geoff, ()=>
-      callback()
+    @geoff
+      .enqueue(($el)=>
+        $el.css "background-color": "black")
+      .delay()
+      .enqueue callback
     
 
 
