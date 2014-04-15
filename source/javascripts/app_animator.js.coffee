@@ -2,8 +2,8 @@ class window.AppAnimator extends Module
 
   constructor:(@queue="fx")->
     @geoff  = new AnimatedElement "#geoff",
-                  duration: 1000,
-                  queue:    "fx"
+                    duration: 1000,
+                    queue:    "fx"
 
   animate_throws:(user_throw, opponent_throw)->
     _(3).times ()=>
@@ -31,7 +31,7 @@ class window.AppAnimator extends Module
     @geoff
       .enqueue(($el)=>
         $el.css "background-color": "black")
-      .delay()
+      # .delay()
       .enqueue callback
     
 
