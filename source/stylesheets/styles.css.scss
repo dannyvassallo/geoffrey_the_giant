@@ -36,12 +36,11 @@ background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/mastheadb
   min-width: 640px;
   width: 100%;
   height: 860px;
+  background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/gamecontainerbackground.jpg");
+  background-repeat: repeat-x;
 }
 
-#player{
 
-
-}
 
 #geoff {
   display: inline-block;
@@ -115,3 +114,4 @@ background-color: #ab1618;
 font-size: 30px;
   
 }
+

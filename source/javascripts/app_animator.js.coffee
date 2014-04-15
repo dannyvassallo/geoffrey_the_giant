@@ -16,7 +16,7 @@ class window.AppAnimator extends Module
           $el.css "background-color": "grey")
         .delay(200)
         .enqueue(($el)=>
-          $el.css "background-color": "black")
+          $el.css "background-color": "black !important")
         .delay(200)
 
     @game

@@ -33,3 +33,10 @@ $ ->
   firstScriptTag = document.getElementsByTagName("script")[0]
   firstScriptTag.parentNode.insertBefore tag, firstScriptTag
   player = undefined
+
+$ ->
+  $("[data-scroll-to]").click (e)->
+    e.preventDefault()
+    $("html, body").animate
+      scrollTop: $($(this).data("scroll-to")).offset().top
+    , 500
