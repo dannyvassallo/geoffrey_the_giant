@@ -1,52 +1,33 @@
-$ ->
-  $(".playgamebutton").css("visibility" , "hidden")
-  $(".hidegame").css("display" , "none")
+tag = document.createElement("script")
+tag.src = "https://www.youtube.com/player_api"
+firstScriptTag = document.getElementsByTagName("script")[0]
+firstScriptTag.parentNode.insertBefore tag, firstScriptTag
+player = undefined
 
+window.onYouTubePlayerAPIReady = ->
+  player = new YT.Player("player",
+    height: "360"
+    width: "640"
+    videoId: "PmrMhGUYdMY"
+    events:
+      onReady: onPlayerReady
+      onStateChange: onPlayerStateChange
+  )
+window.onPlayerReady = (event) ->
 
-$ ->
-  window.onYouTubePlayerAPIReady = ->
-    player = new YT.Player("player",
-      height: "360"
-      width: "640"
-      videoId: "PmrMhGUYdMY"
-      events:
-        onReady: onPlayerReady
-        onStateChange: onPlayerStateChange
-    )
-    return
-  window.onPlayerReady = (event) ->
+window.onPlayerStateChange = (event) ->
+  if event.data is YT.PlayerState.PLAYING
+    $(".playgamebutton").removeClass "hidden"
+    
+    Helpers.scrollTo $("#playercontainer")
 
-  #/ event.target.playVideo(); 
-  window.onPlayerStateChange = (event) ->
-    if event.data is YT.PlayerState.PLAYING
-      console.log "clicked play"
-      $(".playgamebutton").css("visibility" , "visible")
-    if event.data is YT.PlayerState.ENDED
-      _gaq.push [
-        "_trackEvent"
-        "Videos"
-        "Watch to End"
-        player.getVideoUrl()
-      ]
-    return
-  tag = document.createElement("script")
-  tag.src = "https://www.youtube.com/player_api"
-  firstScriptTag = document.getElementsByTagName("script")[0]
-  firstScriptTag.parentNode.insertBefore tag, firstScriptTag
-  player = undefined
-
-$ ->
-  $("[data-scroll-to]").click (e)->
-    e.preventDefault()
-    $("html, body").animate
-      scrollTop: $($(this).data("scroll-to")).offset().top
-    , 500
-
-
+  # if event.data is YT.PlayerState.ENDED
 
 $ ->
   $(".playgamebutton").on "click", ->
-    $(".hidegame").css "display", "visible"
-    return
+    $("#game-container").removeClass "hidden"
 
-  return
+  $("[data-scroll-to]").click (e)->
+    e.preventDefault()
+    $this = $(@)
+    Helpers.scrollTo $($this.data("scroll-to"))
