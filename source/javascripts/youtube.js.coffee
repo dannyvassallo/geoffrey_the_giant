@@ -1,5 +1,6 @@
 $ ->
   $(".playgamebutton").css("visibility" , "hidden")
+  $(".hidegame").css("display" , "none")
 
 
 $ ->
@@ -40,3 +41,12 @@ $ ->
     $("html, body").animate
       scrollTop: $($(this).data("scroll-to")).offset().top
     , 500
+
+
+
+$ ->
+  $(".playgamebutton").on "click", ->
+    $(".hidegame").css "display", "visible"
+    return
+
+  return
