@@ -1,4 +1,8 @@
 $ ->
+  $(".playgamebutton").css("visibility" , "hidden")
+
+
+$ ->
   window.onYouTubePlayerAPIReady = ->
     player = new YT.Player("player",
       height: "360"
@@ -14,15 +18,8 @@ $ ->
   #/ event.target.playVideo(); 
   window.onPlayerStateChange = (event) ->
     if event.data is YT.PlayerState.PLAYING
-      _gaq.push [
-        "_trackEvent"
-        "Videos"
-        "Play"
-        player.getVideoUrl()
-      ]
-    console.log "clicked play"
-    $(".invite-contest-body").addClass "showcontest"
-    $(".contestdialog").addClass "contestdialoghidden"
+      console.log "clicked play"
+      $(".playgamebutton").css("visibility" , "visible")
     if event.data is YT.PlayerState.ENDED
       _gaq.push [
         "_trackEvent"
@@ -36,6 +33,3 @@ $ ->
   firstScriptTag = document.getElementsByTagName("script")[0]
   firstScriptTag.parentNode.insertBefore tag, firstScriptTag
   player = undefined
-
-
-

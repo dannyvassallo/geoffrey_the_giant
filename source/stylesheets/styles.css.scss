@@ -1,6 +1,26 @@
+@font-face { 
+ font-family: aged; 
+ src: url('http://www.geoffreythegiant.com/wp-content/themes/spacecloud/fnt/Aged_Book.ttf'); 
+}
+
+@font-face { 
+ font-family: Droid; 
+ src: url('http://www.geoffreythegiant.com/wp-content/themes/spacecloud/fnt/DroidSans.ttf');
+ font-weight:normal;
+}
+
+@font-face { 
+ font-family: Droid; 
+ src: url('http://www.geoffreythegiant.com/wp-content/themes/spacecloud/fnt/DroidSans-Bold.ttf');
+ font-weight:bold;
+} 
+
+
 body {
   text-align: center;
   background-color: white;
+  font-family: Droid, Arial;
+  font-size: 12px;
 }
 
 #masthead{
@@ -69,3 +89,29 @@ background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/mastheadb
   background-repeat: repeat-x;
 }
 
+.playgamebutton{
+
+border-radius: 15px;
+border: 0px;
+padding: 14px;
+margin: 0 auto;
+margin-bottom: 20px;
+margin-top: 20px;
+color: #fff;
+background-color: #73bf45;
+font-size: 30px;
+
+}
+.playgamebutton:hover{
+
+border-radius: 15px;
+border: 0px;
+padding: 14px;
+margin: 0 auto;
+margin-bottom: 20px;
+margin-top: 20px;
+color: #fff;
+background-color: #ab1618;
+font-size: 30px;
+  
+}
