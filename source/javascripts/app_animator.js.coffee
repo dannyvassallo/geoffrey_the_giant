@@ -5,6 +5,10 @@ class window.AppAnimator extends Module
                   duration: 1000,
                   queue:    "fx"
 
+    @game  = new AnimatedElement "#game-container",
+                  duration: 2200,
+                  queue:    "fx"
+
   animate_throws:(user_throw, opponent_throw)->
     _(3).times ()=>
       @geoff
@@ -14,6 +18,11 @@ class window.AppAnimator extends Module
         .enqueue(($el)=>
           $el.css "background-color": "black")
         .delay(200)
+
+    @game
+      .enqueue(($el)=>
+        $el.css "background-color": "black")
+      .delay()
 
   animate_round_win:()->
     @geoff
@@ -31,8 +40,11 @@ class window.AppAnimator extends Module
     @geoff
       .enqueue(($el)=>
         $el.css "background-color": "black")
-      .delay()
       .enqueue callback
+
+    @game
+      .enqueue(($el)=>
+        $el.css "background-color": "white")
     
 
 
