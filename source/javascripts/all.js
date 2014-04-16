@@ -1,19 +1,19 @@
-//= require vendor/underscore.min
-//= require vendor/jquery.min
-//= require vendor/event_emitter.min
+//= require vendor/_underscore.min
+//= require vendor/_jquery.min
+//= require vendor/_event_emitter.min
 //  
-//= require helpers
+//= require _helpers
 //  
-//= require mixins/module
-//= require mixins/emittable
+//= require mixins/_module
+//= require mixins/_emittable
 //
-//= require youtube  
-//= require animated_element
-//= require app_animator
-//= require game
-//= require player
-//= require throw
-//= require driver
-//= require app
+//= require _youtube  
+//= require _animated_element
+//= require _app_animator
+//= require _game
+//= require _player
+//= require _throw
+//= require _driver
+//= require _app
 //  
 //= require_tree .
