@@ -32,15 +32,35 @@ class window.AppAnimator extends Module
       .delay()
 
   animate_round_loss:()->
-    @geoff
-      .enqueue(($el)=>
-        $el.css "background-color": "red")
-      .delay()
+    _(2).times ()=>
+      @geoff
+        .enqueue(($el)=>
+          $el.css "background-color": "red"
+          $el.css "background-image": "url(\"https://s3.amazonaws.com/myfangate.com/geoffrey/winning/frameone.png\")")
+        .delay( 200 )
+        .enqueue(($el)=>
+          $el.css "background-color": "red"
+          $el.css "background-image": "url(\"https://s3.amazonaws.com/myfangate.com/geoffrey/winning/frametwo.png\")")
+        .delay( 200 )
+
+    _(2).times ()=>
+      @geoff
+        .enqueue(($el)=>
+          $el.css "background-color": "red"
+          $el.css "background-image": "url(\"https://s3.amazonaws.com/myfangate.com/geoffrey/winning/framethree.png\")")
+        .delay( 200 )
+        .enqueue(($el)=>
+          $el.css "background-color": "red"
+          $el.css "background-image": "url(\"https://s3.amazonaws.com/myfangate.com/geoffrey/winning/framefour.png\")")
+        .delay( 200 )
+
+    @geoff.delay( 400 )
 
   animate_new_round:(callback=null)->
     @geoff
       .enqueue(($el)=>
-        $el.css "background-color": "black")
+        $el.css "background-color": "black"
+        $el.css "background-image": "url(\"https://s3.amazonaws.com/myfangate.com/geoffrey/bodytest.png\")")
       .enqueue callback
 
     @game
