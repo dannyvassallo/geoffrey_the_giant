@@ -57,29 +57,66 @@ body {
 
 .action-btn{
   display: inline-block;
-  width: 85px;
-  height: 85px;
+  position: relative;
+
+  background-size: 100%;
+
+  margin: ($action-btn-size-hover - $action-btn-size) / 2;
+  width:  $action-btn-size;
+  height: $action-btn-size;
+
+  &:hover {
+    margin: 0;
+    width:  $action-btn-size-hover;
+    height: $action-btn-size-hover;
+  }
+
+  &.action-btn-small {
+    margin: ($action-btn-size-hover - $action-btn-size-small) / 2;
+    width:  $action-btn-size-small;
+    height: $action-btn-size-small;
+  }
 
   &.action-btn-rock{
-    background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/rockbutton.png") 
+    background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/rockbutton.png");
+    [data-hover-action=spock] &,
+    [data-hover-action=paper] & {
+      @extend .action-btn-small;
+    }
   }
   &.action-btn-paper{
-    background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/paperbutton.png") 
+    background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/paperbutton.png");
+    [data-hover-action=scissors] &,
+    [data-hover-action=lizard] & {
+      @extend .action-btn-small;
+    }
   }
   &.action-btn-scissors{
-    background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/scissorsbutton.png") 
+    background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/scissorsbutton.png");
+    [data-hover-action=rock] &,
+    [data-hover-action=spock] & {
+      @extend .action-btn-small;
+    }
   }
   &.action-btn-lizard{
-    background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/lizardbutton.png") 
+    background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/lizardbutton.png");
+    [data-hover-action=scissors] &,
+    [data-hover-action=rock] & {
+      @extend .action-btn-small;
+    }
   }
   &.action-btn-spock{
-    background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/spockbutton.png") 
+    background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/spockbutton.png");
+    [data-hover-action=paper] &,
+    [data-hover-action=lizard] & {
+      @extend .action-btn-small;
+    }
   }
 }
 
 
 
-.playgamebutton{
+.btn-play-game{
   border-radius: 15px;
   border: 0px;
   padding: 14px;

@@ -1,3 +1,7 @@
 
 $game-container-height: 640px;
-$game-container-width: 640px;
+$game-container-width:  640px;
+
+$action-btn-size:       85px;
+$action-btn-size-hover: $action-btn-size + 14;
+$action-btn-size-small: $action-btn-size - 14;

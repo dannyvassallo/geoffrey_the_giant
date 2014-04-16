@@ -17,17 +17,17 @@ window.onPlayerReady = (event) ->
 
 window.onPlayerStateChange = (event) ->
   if event.data is YT.PlayerState.PLAYING
-    $(".playgamebutton").removeClass "hidden"
-    
-    Helpers.scrollTo $("#playercontainer")
+    $(".btn-play-game").removeClass "hidden"
+
+    Helpers.scroll_to $("#player-container")
 
   # if event.data is YT.PlayerState.ENDED
 
 $ ->
-  $(".playgamebutton").on "click", ->
+  $(".btn-play-game").on "click", ->
     $("#game-container").removeClass "hidden"
 
   $("[data-scroll-to]").click (e)->
     e.preventDefault()
     $this = $(@)
-    Helpers.scrollTo $($this.data("scroll-to"))
+    Helpers.scroll_to $($this.data("scroll-to"))
