@@ -13,7 +13,8 @@ class window.AppAnimator extends Module
     _(3).times ()=>
       @geoff
         .enqueue(($el)=>
-          $el.css "background-color": "grey")
+          $el.css "background-color": "grey"
+          $el.css "background-image": "url(\"https://s3.amazonaws.com/myfangate.com/geoffrey/bodytest.png\")")
         .delay(200)
         .enqueue(($el)=>
           $el.css "background-color": "black")
