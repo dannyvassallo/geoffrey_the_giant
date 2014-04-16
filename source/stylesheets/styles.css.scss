@@ -1,20 +1,3 @@
-@font-face { 
- font-family: aged; 
- src: url('http://www.geoffreythegiant.com/wp-content/themes/spacecloud/fnt/Aged_Book.ttf'); 
-}
-
-@font-face { 
- font-family: Droid; 
- src: url('http://www.geoffreythegiant.com/wp-content/themes/spacecloud/fnt/DroidSans.ttf');
- font-weight:normal;
-}
-
-@font-face { 
- font-family: Droid; 
- src: url('http://www.geoffreythegiant.com/wp-content/themes/spacecloud/fnt/DroidSans-Bold.ttf');
- font-weight:bold;
-} 
-
 
 body {
   text-align: center;
@@ -24,32 +7,47 @@ body {
 }
 
 #masthead{
-
-width: 100%;
-background-position: center;
-background-repeat: no-repeat;
-background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/mastheadbackground.jpg")
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/mastheadbackground.jpg")
 }
 
 #game-container{
   position: relative;
-  min-width: 640px;
+  min-width: $game-container-width;
+  height: $game-container-height;
   width: 100%;
-  height: 860px;
   background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/gamecontainerbackground.jpg");
   background-repeat: repeat-x;
 }
 
 
 
+.clouds{
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  height: 138px;
+
+  background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/clouds.png");
+  background-position: center; 
+  background-repeat: repeat-x;
+}
+
+
 #geoff {
   display: inline-block;
   margin: 0 auto;
   background-color: black;
-  width: 640px;
-  height:860px;
+  width: $game-container-width;
+  height:$game-container-height;
 
 }
+
 .buttons {
   position: absolute;
   height: 90px;
@@ -59,59 +57,79 @@ background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/mastheadb
 
 .action-btn{
   display: inline-block;
-  width: 85px;
-  height: 85px;
+  position: relative;
+
+  background-size: 100%;
+
+  margin: ($action-btn-size-hover - $action-btn-size) / 2;
+  width:  $action-btn-size;
+  height: $action-btn-size;
+
+  &:hover {
+    margin: 0;
+    width:  $action-btn-size-hover;
+    height: $action-btn-size-hover;
+  }
+
+  &.action-btn-small {
+    margin: ($action-btn-size-hover - $action-btn-size-small) / 2;
+    width:  $action-btn-size-small;
+    height: $action-btn-size-small;
+  }
+
+  &.action-btn-rock{
+    background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/rockbutton.png");
+    [data-hover-action=spock] &,
+    [data-hover-action=paper] & {
+      @extend .action-btn-small;
+    }
+  }
+  &.action-btn-paper{
+    background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/paperbutton.png");
+    [data-hover-action=scissors] &,
+    [data-hover-action=lizard] & {
+      @extend .action-btn-small;
+    }
+  }
+  &.action-btn-scissors{
+    background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/scissorsbutton.png");
+    [data-hover-action=rock] &,
+    [data-hover-action=spock] & {
+      @extend .action-btn-small;
+    }
+  }
+  &.action-btn-lizard{
+    background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/lizardbutton.png");
+    [data-hover-action=scissors] &,
+    [data-hover-action=rock] & {
+      @extend .action-btn-small;
+    }
+  }
+  &.action-btn-spock{
+    background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/spockbutton.png");
+    [data-hover-action=paper] &,
+    [data-hover-action=lizard] & {
+      @extend .action-btn-small;
+    }
+  }
 }
 
-.action-btn-rock{
-  background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/rockbutton.png") 
-}
-.action-btn-paper{
-  background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/paperbutton.png") 
-}
-.action-btn-scissors{
-  background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/scissorsbutton.png") 
-}
-.action-btn-lizard{
-  background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/lizardbutton.png") 
-}
-.action-btn-spock{
-  background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/spockbutton.png") 
-}
 
 
-#clouds{
-  width: 100%;
-  height: 138px;
-  background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/clouds.png");
-  background-position: center; 
-  background-repeat: repeat-x;
-}
-
-.playgamebutton{
-
-border-radius: 15px;
-border: 0px;
-padding: 14px;
-margin: 0 auto;
-margin-bottom: 20px;
-margin-top: 20px;
-color: #fff;
-background-color: #73bf45;
-font-size: 30px;
-
-}
-.playgamebutton:hover{
-
-border-radius: 15px;
-border: 0px;
-padding: 14px;
-margin: 0 auto;
-margin-bottom: 20px;
-margin-top: 20px;
-color: #fff;
-background-color: #ab1618;
-font-size: 30px;
+.btn-play-game{
+  border-radius: 15px;
+  border: 0px;
+  padding: 14px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  color: #fff;
+  background-color: #73bf45;
+  font-size: 30px;
   
+  &:hover {
+    background-color: #ab1618;
+  }
 }
+
 
