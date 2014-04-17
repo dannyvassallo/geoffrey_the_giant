@@ -1,6 +1,6 @@
 class window.AnimatedElement extends Module
 
-  constructor: (element, options={})->
+  constructor:(element, options={})->
     @options = $.extend {
       queue:      "fx"
       duration:   400
@@ -12,6 +12,18 @@ class window.AnimatedElement extends Module
     @properties = @options['properties']
     for p,v of @properties
       @[p] = v
+
+    @_timer = null
+
+  indefinitely:(interval, fn)->
+    if @_timer
+      @_timer = setInterval =>
+        fn.apply(@$el)
+      , interval
+
+  interrupt:()->
+    clearInterval @_timer if @_timer
+    @_timer = null
 
   # animate
   animate:(properties, options={})->
