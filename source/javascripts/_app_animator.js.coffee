@@ -52,13 +52,16 @@ class window.AppAnimator extends Module
         @pow.show()
 
 
-  animate_round_win:()->
+  animate_round_win:(fn=null)->
     @geoff
       .enqueue ($el)=>
         $el.css "background-color": "lightgreen"
       .delay()
+    
+    @geoff.enqueue =>
+      fn.apply this if fn
 
-  animate_round_loss:()->
+  animate_round_loss:(fn=null)->
     @geoff
       .delay(600)
       .enqueue ($el)=>
@@ -82,6 +85,9 @@ class window.AppAnimator extends Module
         .enqueue ($el)=>
           $el.css "background-image": CSS.url @geoff.base_url, "winning/framefour.png"
         .delay 200
+
+    @geoff.enqueue =>
+      fn.apply this if fn
 
     @geoff.delay 200
 

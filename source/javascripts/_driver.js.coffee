@@ -18,16 +18,20 @@ class window.Driver extends Module
 
     @animator.animate_new_round()
 
+  update_tally:()=>
+    @user.round_wins
 
   on_throw:(winner, loser)=>
     @animator.animate_throws(@user.last_throw, @opponent.last_throw)
 
     if @user is winner
-      @animator.animate_round_win()
+      @animator.animate_round_win(@update_tally)
     else
-      @animator.animate_round_loss()
+      @animator.animate_round_loss(@update_tally)
 
     @animator.animate_new_round(@enable_user_input)
+
+
 
 
   on_game_over:(winner, loser)=>
