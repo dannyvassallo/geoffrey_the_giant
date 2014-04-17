@@ -24,6 +24,26 @@ body {
   background-repeat: repeat-x;
 }
 
+#pow-container {
+  z-index: 800;
+  position: absolute;
+  top:200px;
+  right:0;
+  bottom:0;
+  left:0;
+
+  #pow {
+    z-index: 800;
+    position: absolute;
+    top:0;
+    bottom:0;
+    width: $game-container-width;
+    height:$game-container-height;
+    left:50%;
+    margin-left: - ($game-container-width / 2);
+  }
+}
+
 
 
 .clouds{
@@ -42,7 +62,6 @@ body {
 #geoff {
   display: inline-block;
   margin: 0 auto;
-  background-color: black;
   width: $game-container-width;
   height:$game-container-height;
 

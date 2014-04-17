@@ -2,11 +2,16 @@ class window.AnimatedElement extends Module
 
   constructor: (element, options={})->
     @options = $.extend {
-      queue:    "fx"
-      duration: 400
+      queue:      "fx"
+      duration:   400
+      properties: {}
     }, options
 
     @$el = $(element)
+
+    @properties = @options['properties']
+    for p,v of @properties
+      @[p] = v
 
   # animate
   animate:(properties, options={})->
