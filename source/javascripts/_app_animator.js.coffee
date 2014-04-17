@@ -59,29 +59,15 @@ class window.AppAnimator extends Module
       .delay()
 
   animate_round_loss:()->
-    @geoff
-      .delay(600)
-      .enqueue ($el)=>
-        $el.css "background-color": "pink"
-      .delay(600)
-
-    _(2).times ()=>
+    @geoff.delay(600)
+    _(5).times ()=>
       @geoff
         .enqueue ($el)=>
-          $el.css "background-image": CSS.url @geoff.base_url, "winning/frameone.png"
-        .delay 200
+          $el.css "background-image": CSS.url @geoff.base_url, "losing/frame2.png"
+        .delay(300)
         .enqueue ($el)=>
-          $el.css "background-image": CSS.url @geoff.base_url, "winning/frametwo.png"
-        .delay 200
-
-    _(2).times ()=>
-      @geoff
-        .enqueue ($el)=>
-          $el.css "background-image": CSS.url @geoff.base_url, "winning/framethree.png"
-        .delay 200
-        .enqueue ($el)=>
-          $el.css "background-image": CSS.url @geoff.base_url, "winning/framefour.png"
-        .delay 200
+          $el.css "background-image": CSS.url @geoff.base_url, "losing/frame1.png"
+        .delay(300)
 
     @geoff.delay 200
 
