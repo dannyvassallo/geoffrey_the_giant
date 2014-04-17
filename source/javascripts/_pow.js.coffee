@@ -4,7 +4,7 @@ class window.Pow extends Module
     @options = $.extend {
       show_animation:   "bounceIn"
       show_timing:      "ease-in-out"
-      show_duration:    600
+      show_duration:    300
 
       hide_animation:   "fadeOut"
       hide_timing:      "linear"

@@ -10,7 +10,8 @@ class window.Driver extends Module
     @opponent     = new Player("Geoffrey")
     @current_game = null
 
-    @$action_btns  = $(".action-btn")
+    @$btn_container = $(".buttons")
+    @$btns          = @$btn_container.find(".action-btn")
 
     @enable_user_input()
     @new_game()
@@ -33,18 +34,30 @@ class window.Driver extends Module
     @new_game()
 
 
-
   # allow user to click buttons
   enable_user_input:()=>
     self = this
-    @$action_btns.removeClass("disabled").on "click", (e)->
-      e.preventDefault()
-      self.disable_user_input()
-      self.current_game.user_throw $(@).data("action")
+    $btn_container = @$btn_container
+
+    @$btns
+      .removeClass("disabled").on "click", (e)->
+        e.preventDefault()
+        self.disable_user_input()
+        self.current_game.user_throw $(@).data("action")
+      .on "mouseenter", ->
+        $btn_container.attr "data-hover-action", $(this).data("action")
+      .on "mouseleave", ->
+        $btn_container.attr "data-hover-action", null
 
   # disable buttons while animating
   disable_user_input:()->
-    @$action_btns.addClass("disabled").off "click"
+    @$btns
+      .addClass("disabled")
+      .off "click"
+      .off "mouseenter"
+      .off "mouseleave"
+
+    @$btn_container.attr "data-hover-action", null
 
   # create a new game and setup listeners
   new_game:()->

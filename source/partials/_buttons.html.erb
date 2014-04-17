@@ -1,5 +1,5 @@
 <% @buttons = ["rock","paper","scissors","lizard","spock"] %>
 
 <% @buttons.each do |button| %>
-  <a href="#<%= button %>" data-action="<%= button %>" class="action-btn action-btn-<%= button %>"></a>
+  <a data-action="<%= button %>" class="action-btn action-btn-<%= button %>"></a>
 <% end %>
