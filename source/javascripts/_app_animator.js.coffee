@@ -39,9 +39,7 @@ class window.AppAnimator extends Module
         .enqueue ($el)=>
           $el.css "background-image": CSS.url @geoff.base_url, "shake/frame2.png"
         .delay 50
-        .enqueue ($el)=>
-          $el.css "background-image": CSS.url @geoff.base_url, "shake/frame1.png"
-        .delay 50
+
 
 
     @geoff
@@ -52,13 +50,26 @@ class window.AppAnimator extends Module
         @pow.show()
 
 
-  animate_round_win:()->
-    @geoff
-      .enqueue ($el)=>
-        $el.css "background-color": "lightgreen"
-      .delay()
-
   animate_round_loss:()->
+      @geoff
+        .enqueue ($el)=>
+          $el.css "background-image": CSS.url @geoff.base_url, "winning/frame1.png"
+        .delay 100 
+        .enqueue ($el)=>
+          $el.css "background-image": CSS.url @geoff.base_url, "winning/frame2.png"
+        .delay 100
+        .enqueue ($el)=>
+          $el.css "background-image": CSS.url @geoff.base_url, "winning/frame3.png"
+        .delay 100
+        .enqueue ($el)=>
+          $el.css "background-image": CSS.url @geoff.base_url, "winning/frame4.png"
+        .delay 100
+        .enqueue ($el)=>
+          $el.css "background-image": CSS.url @geoff.base_url, "winning/frame5.png"
+        .delay 600
+
+
+  animate_round_win:()->
     @geoff.delay(600)
     _(5).times ()=>
       @geoff
@@ -74,7 +85,7 @@ class window.AppAnimator extends Module
   animate_new_round:(callback=null)->
 
     @geoff.enqueue ($el)=>
-      $el.css "background-color": "white"
+
 
       (callback || (->)).apply(this)
 
