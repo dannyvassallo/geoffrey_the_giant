@@ -19,11 +19,11 @@ class window.AppAnimator extends Module
     _(3).times ()=>
       @geoff
         .enqueue ($el)=>
-          $el.css "background-color": "grey"
+          # $el.css "background-color": "grey"
           $el.css "background-image": CSS.url @geoff.base_url, "bodytest.png"
         .delay 200
-        .enqueue ($el)=>
-          $el.css "background-color": "lightgrey"
+        # .enqueue ($el)=>
+        #   $el.css "background-color": "lightgrey"
         .delay 200
 
     @geoff
@@ -36,15 +36,15 @@ class window.AppAnimator extends Module
 
   animate_round_win:()->
     @geoff
-      .enqueue ($el)=>
-        $el.css "background-color": "lightgreen"
+      # .enqueue ($el)=>
+      #   $el.css "background-color": "lightgreen"
       .delay()
 
   animate_round_loss:()->
     @geoff
       .delay(600)
-      .enqueue ($el)=>
-        $el.css "background-color": "pink"
+      # .enqueue ($el)=>
+      #   $el.css "background-color": "pink"
       .delay(600)
 
     _(2).times ()=>
@@ -84,7 +84,4 @@ class window.AppAnimator extends Module
           $el.css "background-image": CSS.url @geoff.base_url, "breathing/frame2.png"
         .delay 200
       .enqueue callback || (->)
-
-    
-
 
