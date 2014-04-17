@@ -13,6 +13,8 @@ class window.AppAnimator extends Module
 
     @pow    = new Pow "#pow-container"
 
+    @animate_new_round()
+
   animate_throws:(user_throw, opponent_throw)->
     _(3).times ()=>
       @geoff
@@ -67,11 +69,19 @@ class window.AppAnimator extends Module
 
   animate_new_round:(callback=null)->
     @geoff
-      .enqueue ($el)=>
-        # $el.css "background-color": "white"
-        $el.css "background-image": CSS.url @geoff.base_url, "bodytest.png"
-      .enqueue callback
-
-    
-
+    _(200).times ()=>
+      @geoff
+        .enqueue ($el)=>
+          $el.css "background-image": CSS.url @geoff.base_url, "breathing/frame1.png"
+        .delay 200
+        .enqueue ($el)=>
+          $el.css "background-image": CSS.url @geoff.base_url, "breathing/frame2.png"
+        .delay 200
+        .enqueue ($el)=>
+          $el.css "background-image": CSS.url @geoff.base_url, "breathing/frame3.png"
+        .delay 200
+        .enqueue ($el)=>
+          $el.css "background-image": CSS.url @geoff.base_url, "breathing/frame2.png"
+        .delay 200
+      .enqueue callback || (->)
 
