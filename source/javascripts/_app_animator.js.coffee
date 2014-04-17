@@ -86,24 +86,7 @@ class window.AppAnimator extends Module
     @geoff.delay 200
 
   animate_new_round:(callback=null)->
-<<<<<<< HEAD
-    @geoff
-    _(2).times ()=>
-      @geoff
-        .enqueue ($el)=>
-          $el.css "background-image": CSS.url @geoff.base_url, "breathing/frame1.png"
-        .delay 200
-        .enqueue ($el)=>
-          $el.css "background-image": CSS.url @geoff.base_url, "breathing/frame2.png"
-        .delay 200
-        .enqueue ($el)=>
-          $el.css "background-image": CSS.url @geoff.base_url, "breathing/frame3.png"
-        .delay 200
-        .enqueue ($el)=>
-          $el.css "background-image": CSS.url @geoff.base_url, "breathing/frame2.png"
-        .delay 200
-      .enqueue callback || (->)
-=======
+
     @geoff.enqueue ($el)=>
       $el.css "background-color": "white"
 
@@ -123,5 +106,4 @@ class window.AppAnimator extends Module
           .enqueue ($el)=>
             $el.css "background-image": CSS.url @geoff.base_url, "breathing/frame2.png"
           .delay 200
->>>>>>> origin/interruptable-repeat
 
