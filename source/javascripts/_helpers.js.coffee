@@ -11,7 +11,8 @@ window.Helpers =
         left: "-999999999px"
 
   debug: ()->
-    return unless window.console && window.console.log
+    debug = true # toggle this
+    return unless window.console && window.console.log && debug
     window.console.log arguments...
 
 window.CSS = 
