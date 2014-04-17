@@ -39,9 +39,7 @@ class window.AppAnimator extends Module
         .enqueue ($el)=>
           $el.css "background-image": CSS.url @geoff.base_url, "shake/frame2.png"
         .delay 50
-        .enqueue ($el)=>
-          $el.css "background-image": CSS.url @geoff.base_url, "shake/frame1.png"
-        .delay 50
+
 
 
     @geoff
@@ -52,39 +50,39 @@ class window.AppAnimator extends Module
         @pow.show()
 
 
-  animate_round_win:(fn=null)->
-    @geoff
-      .enqueue ($el)=>
-        $el.css "background-color": "lightgreen"
-      .delay()
-    
-    @geoff.enqueue =>
-      fn.apply this if fn
 
   animate_round_loss:(fn=null)->
     @geoff
-      .delay(600)
       .enqueue ($el)=>
-        $el.css "background-color": "pink"
-      .delay(600)
+        $el.css "background-image": CSS.url @geoff.base_url, "winning/frame1.png"
+      .delay 100 
+      .enqueue ($el)=>
+        $el.css "background-image": CSS.url @geoff.base_url, "winning/frame2.png"
+      .delay 100
+      .enqueue ($el)=>
+        $el.css "background-image": CSS.url @geoff.base_url, "winning/frame3.png"
+      .delay 100
+      .enqueue ($el)=>
+        $el.css "background-image": CSS.url @geoff.base_url, "winning/frame4.png"
+      .delay 100
+      .enqueue ($el)=>
+        $el.css "background-image": CSS.url @geoff.base_url, "winning/frame5.png"
+      .delay 600
 
-    _(2).times ()=>
+    @geoff.enqueue =>
+      fn.apply this if fn
+
+
+  animate_round_win:(fn=null)->
+    @geoff.delay(600)
+    _(5).times ()=>
       @geoff
         .enqueue ($el)=>
-          $el.css "background-image": CSS.url @geoff.base_url, "winning/frameone.png"
-        .delay 200
+          $el.css "background-image": CSS.url @geoff.base_url, "losing/frame2.png"
+        .delay(300)
         .enqueue ($el)=>
-          $el.css "background-image": CSS.url @geoff.base_url, "winning/frametwo.png"
-        .delay 200
-
-    _(2).times ()=>
-      @geoff
-        .enqueue ($el)=>
-          $el.css "background-image": CSS.url @geoff.base_url, "winning/framethree.png"
-        .delay 200
-        .enqueue ($el)=>
-          $el.css "background-image": CSS.url @geoff.base_url, "winning/framefour.png"
-        .delay 200
+          $el.css "background-image": CSS.url @geoff.base_url, "losing/frame1.png"
+        .delay(300)
 
     @geoff.enqueue =>
       fn.apply this if fn
@@ -94,11 +92,11 @@ class window.AppAnimator extends Module
   animate_new_round:(callback=null)->
 
     @geoff.enqueue ($el)=>
-      $el.css "background-color": "white"
+
 
       (callback || (->)).apply(this)
 
-      @geoff.indefinitely 1000, ()=>
+      @geoff.indefinitely 900, ()=>
         @geoff
           .enqueue ($el)=>
             $el.css "background-image": CSS.url @geoff.base_url, "breathing/frame1.png"

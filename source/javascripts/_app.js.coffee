@@ -14,6 +14,17 @@ $ ->
       "https://s3.amazonaws.com/myfangate.com/geoffrey/shake/frame2.png"
       "https://s3.amazonaws.com/myfangate.com/geoffrey/shake/frame3.png"
       "https://s3.amazonaws.com/myfangate.com/geoffrey/shake/frame4.png"
+      "https://s3.amazonaws.com/myfangate.com/geoffrey/losing/frame1.png"
+      "https://s3.amazonaws.com/myfangate.com/geoffrey/losing/frame2.png"
+      "https://s3.amazonaws.com/myfangate.com/geoffrey/losing/frame3.png"
+      "https://s3.amazonaws.com/myfangate.com/geoffrey/losing/frame4.png"
+      "https://s3.amazonaws.com/myfangate.com/geoffrey/winning/frame1.png"
+      "https://s3.amazonaws.com/myfangate.com/geoffrey/winning/frame2.png"
+      "https://s3.amazonaws.com/myfangate.com/geoffrey/winning/frame3.png"
+      "https://s3.amazonaws.com/myfangate.com/geoffrey/winning/frame4.png"
+      "https://s3.amazonaws.com/myfangate.com/geoffrey/winning/frame5.png"
+      "https://s3.amazonaws.com/myfangate.com/geoffrey/throw_paper.png"
+
     ]
 
     # $btn = $(this)
