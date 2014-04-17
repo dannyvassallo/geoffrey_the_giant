@@ -7,15 +7,17 @@ window.Helpers =
   preload_images: (url_array)->
     _(url_array).each (url)->
       $('<img />').attr('src',url).appendTo('body').css
-        position: "fixed"
-        left: "-999999999px"
+        position:   "absolute"
+        left:       "-9999px"
+        right:      "-9999px"
+        visibility: "hidden"
 
   debug: ()->
     debug = true # toggle this
     return unless window.console && window.console.log && debug
     window.console.log arguments...
 
-window.CSS = 
+window.CSS =
   url:()->
     url = Array::slice.call(arguments,0).join("/").replace("//","/")
     "url(\"#{url}\")"
