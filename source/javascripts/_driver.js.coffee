@@ -15,6 +15,8 @@ class window.Driver extends Module
     @enable_user_input()
     @new_game()
 
+    @animator.animate_new_round()
+
 
   on_throw:(winner, loser)=>
     @animator.animate_throws(@user.last_throw, @opponent.last_throw)
