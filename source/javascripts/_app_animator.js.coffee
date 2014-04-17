@@ -13,18 +13,21 @@ class window.AppAnimator extends Module
 
     @pow    = new Pow "#pow-container"
 
-    @animate_new_round()
 
   animate_throws:(user_throw, opponent_throw)->
+    Helpers.debug "animate_throws"
+
+    @geoff.interrupt()
+
     _(3).times ()=>
       @geoff
         .enqueue ($el)=>
-          # $el.css "background-color": "grey"
+          $el.css "background-color": "grey"
           $el.css "background-image": CSS.url @geoff.base_url, "bodytest.png"
-        .delay 200
-        # .enqueue ($el)=>
-        #   $el.css "background-color": "lightgrey"
-        .delay 200
+        .delay 500
+        .enqueue ($el)=>
+          $el.css "background-color": "lightgrey"
+        .delay 500
 
     @geoff
       .enqueue ($el)=>
@@ -36,15 +39,15 @@ class window.AppAnimator extends Module
 
   animate_round_win:()->
     @geoff
-      # .enqueue ($el)=>
-      #   $el.css "background-color": "lightgreen"
+      .enqueue ($el)=>
+        $el.css "background-color": "lightgreen"
       .delay()
 
   animate_round_loss:()->
     @geoff
       .delay(600)
-      # .enqueue ($el)=>
-      #   $el.css "background-color": "pink"
+      .enqueue ($el)=>
+        $el.css "background-color": "pink"
       .delay(600)
 
     _(2).times ()=>
@@ -68,20 +71,23 @@ class window.AppAnimator extends Module
     @geoff.delay 200
 
   animate_new_round:(callback=null)->
-    @geoff
-    _(200).times ()=>
-      @geoff
-        .enqueue ($el)=>
-          $el.css "background-image": CSS.url @geoff.base_url, "breathing/frame1.png"
-        .delay 200
-        .enqueue ($el)=>
-          $el.css "background-image": CSS.url @geoff.base_url, "breathing/frame2.png"
-        .delay 200
-        .enqueue ($el)=>
-          $el.css "background-image": CSS.url @geoff.base_url, "breathing/frame3.png"
-        .delay 200
-        .enqueue ($el)=>
-          $el.css "background-image": CSS.url @geoff.base_url, "breathing/frame2.png"
-        .delay 200
-      .enqueue callback || (->)
+    @geoff.enqueue ($el)=>
+      $el.css "background-color": "white"
+
+      (callback || (->)).apply(this)
+
+      @geoff.indefinitely 1000, ()=>
+        @geoff
+          .enqueue ($el)=>
+            $el.css "background-image": CSS.url @geoff.base_url, "breathing/frame1.png"
+          .delay 200
+          .enqueue ($el)=>
+            $el.css "background-image": CSS.url @geoff.base_url, "breathing/frame2.png"
+          .delay 200
+          .enqueue ($el)=>
+            $el.css "background-image": CSS.url @geoff.base_url, "breathing/frame3.png"
+          .delay 200
+          .enqueue ($el)=>
+            $el.css "background-image": CSS.url @geoff.base_url, "breathing/frame2.png"
+          .delay 200
 

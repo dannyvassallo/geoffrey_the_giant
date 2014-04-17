@@ -16,14 +16,23 @@ class window.AnimatedElement extends Module
     @_timer = null
 
   indefinitely:(interval, fn)->
-    if @_timer
+    unless @_timer
       @_timer = setInterval =>
-        fn.apply(@$el)
+        Helpers.debug "indefinitely"
+        fn.apply(@)
       , interval
+    return @
 
   interrupt:()->
-    clearInterval @_timer if @_timer
+    Helpers.debug "interrupt"
+    clearInterval(@_timer) if @_timer
+    # @clearQueue()
     @_timer = null
+    return @
+
+  clearQueue:()->
+    @$el.clearQueue()
+    return @
 
   # animate
   animate:(properties, options={})->
