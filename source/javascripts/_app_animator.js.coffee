@@ -41,11 +41,11 @@ class window.AppAnimator extends Module
         .delay 50
 
 
-
     @geoff
+      .delay 200
       .enqueue ($el)=>
         $el.css "background-image": CSS.url @geoff.base_url, "throw_#{opponent_throw.type}.png"
-      .delay 800
+      .delay 2000
       .enqueue ()=>
         @pow.show()
 

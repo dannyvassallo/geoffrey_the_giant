@@ -24,6 +24,10 @@ $ ->
       "https://s3.amazonaws.com/myfangate.com/geoffrey/winning/frame4.png"
       "https://s3.amazonaws.com/myfangate.com/geoffrey/winning/frame5.png"
       "https://s3.amazonaws.com/myfangate.com/geoffrey/throw_paper.png"
+      "https://s3.amazonaws.com/myfangate.com/geoffrey/throw_rock.png"
+      "https://s3.amazonaws.com/myfangate.com/geoffrey/throw_scissors.png"
+      "https://s3.amazonaws.com/myfangate.com/geoffrey/throw_spock.png"
+      "https://s3.amazonaws.com/myfangate.com/geoffrey/throw_lizard.png"
 
     ]
 
