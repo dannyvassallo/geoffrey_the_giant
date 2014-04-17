@@ -19,12 +19,26 @@ class window.AppAnimator extends Module
     _(3).times ()=>
       @geoff
         .enqueue ($el)=>
-          # $el.css "background-color": "grey"
-          $el.css "background-image": CSS.url @geoff.base_url, "bodytest.png"
-        .delay 200
-        # .enqueue ($el)=>
-        #   $el.css "background-color": "lightgrey"
-        .delay 200
+          $el.css "background-image": CSS.url @geoff.base_url, "shake/frame1.png"
+        .delay 50 
+        .enqueue ($el)=>
+          $el.css "background-image": CSS.url @geoff.base_url, "shake/frame2.png"
+        .delay 50
+        .enqueue ($el)=>
+          $el.css "background-image": CSS.url @geoff.base_url, "shake/frame3.png"
+        .delay 50
+        .enqueue ($el)=>
+          $el.css "background-image": CSS.url @geoff.base_url, "shake/frame4.png"
+        .delay 50
+        .enqueue ($el)=>
+          $el.css "background-image": CSS.url @geoff.base_url, "shake/frame3.png"
+        .delay 50
+        .enqueue ($el)=>
+          $el.css "background-image": CSS.url @geoff.base_url, "shake/frame2.png"
+        .delay 50
+        .enqueue ($el)=>
+          $el.css "background-image": CSS.url @geoff.base_url, "shake/frame1.png"
+        .delay 50
 
     @geoff
       .enqueue ($el)=>
@@ -69,7 +83,7 @@ class window.AppAnimator extends Module
 
   animate_new_round:(callback=null)->
     @geoff
-    _(200).times ()=>
+    _(2).times ()=>
       @geoff
         .enqueue ($el)=>
           $el.css "background-image": CSS.url @geoff.base_url, "breathing/frame1.png"
