@@ -10,3 +10,11 @@ window.Helpers =
         position: "fixed"
         left: "-999999999px"
 
+  debug: ()->
+    return unless window.console && window.console.log
+    window.console.log arguments...
+
+window.CSS = 
+  url:()->
+    url = Array::slice.call(arguments,0).join("/").replace("//","/")
+    "url(\"#{url}\")"
