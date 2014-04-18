@@ -15,9 +15,9 @@ class window.AppAnimator extends Module
 
 
   animate_throws:(user_throw, opponent_throw)->
-    Helpers.debug "animate_throws"
-
     @geoff.interrupt()
+
+    Helpers.debug "animate_throws"
 
     _(3).times ()=>
       @geoff
@@ -92,7 +92,6 @@ class window.AppAnimator extends Module
   animate_new_round:(callback=null)->
 
     @geoff.enqueue ($el)=>
-
 
       (callback || (->)).apply(this)
 

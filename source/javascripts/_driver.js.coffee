@@ -33,21 +33,25 @@ class window.Driver extends Module
 
 
 
+  click_action:(action)=>
+    @$btn_container.attr "data-click-action", action
+    @disable_user_input()
+    @current_game.user_throw(action)
 
   on_game_over:(winner, loser)=>
     @new_game()
 
-
   # allow user to click buttons
   enable_user_input:()=>
-    self = this
     $btn_container = @$btn_container
+    $btn_container.attr "data-click-action", null
+    self = this
 
     @$btns
-      .removeClass("disabled").on "click", (e)->
+      .removeClass("disabled")
+      .on "click", (e)->
         e.preventDefault()
-        self.disable_user_input()
-        self.current_game.user_throw $(@).data("action")
+        self.click_action($(this).data("action"))
       .on "mouseenter", ->
         $btn_container.attr "data-hover-action", $(this).data("action")
       .on "mouseleave", ->
