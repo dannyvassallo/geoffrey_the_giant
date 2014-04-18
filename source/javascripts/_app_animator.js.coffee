@@ -47,6 +47,7 @@ class window.AppAnimator extends Module
         $el.css "background-image": CSS.url @geoff.base_url, "throw_#{opponent_throw.type}.png"
       .delay 2000
       .enqueue ()=>
+        # @pow.$el.css "background-image": CSS.url @geoff.base_url, "throw_#{opponent_throw.type}.png"
         @pow.show()
 
 
