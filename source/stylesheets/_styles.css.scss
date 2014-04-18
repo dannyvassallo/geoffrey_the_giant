@@ -75,6 +75,18 @@ body {
   width:100%;
 }
 
+@mixin action-btn-large() {
+  margin: 0;
+  width:  $action-btn-size-hover;
+  height: $action-btn-size-hover;
+}
+
+@mixin action-btn-small() {
+  margin: ($action-btn-size-hover - $action-btn-size-small) / 2;
+  width:  $action-btn-size-small;
+  height: $action-btn-size-small;
+}
+
 .action-btn{
   display: inline-block;
   position: relative;
@@ -82,71 +94,61 @@ body {
   background-size: 100%;
 
   cursor: pointer;
-  
+
+  @include transition(top .2s linear);
+  top: 0;
+
   margin: ($action-btn-size-hover - $action-btn-size) / 2;
   width:  $action-btn-size;
   height: $action-btn-size;
 
-  &.action-btn-large {
-    margin: 0;
-    width:  $action-btn-size-hover;
-    height: $action-btn-size-hover;
+  [data-click-action] & {
+    top: $action-btn-size-hover * 2;
   }
-
-  &.action-btn-small {
-    margin: ($action-btn-size-hover - $action-btn-size-small) / 2;
-    width:  $action-btn-size-small;
-    height: $action-btn-size-small;
-  }
-
-  &.action-btn-rock{
+  
+  &.action-btn-rock {
     background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/rockbutton.png");
-    [data-hover-action=spock] &,
-    [data-hover-action=paper] & {
-      @extend .action-btn-small;
-    }
-    [data-hover-action=rock] & {
-      @extend .action-btn-large;
-    }
-  }
-  &.action-btn-paper{
-    background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/paperbutton.png");
-    [data-hover-action=scissors] &,
-    [data-hover-action=lizard] & {
-      @extend .action-btn-small;
-    }
-    [data-hover-action=paper] & {
-      @extend .action-btn-large;
-    }
-  }
-  &.action-btn-scissors{
-    background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/scissorsbutton.png");
+
     [data-hover-action=rock] &,
-    [data-hover-action=spock] & {
-      @extend .action-btn-small;
-    }
-    [data-hover-action=scissors] & {
-      @extend .action-btn-large;
+    [data-click-action=rock] & {
+      @include action-btn-large();
+      top:0;
     }
   }
-  &.action-btn-lizard{
-    background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/lizardbutton.png");
-    [data-hover-action=scissors] &,
-    [data-hover-action=rock] & {
-      @extend .action-btn-small;
-    }
-    [data-hover-action=lizard] & {
-      @extend .action-btn-large;
-    }
-  }
-  &.action-btn-spock{
-    background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/spockbutton.png");
+  &.action-btn-paper {
+    background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/paperbutton.png");
+
     [data-hover-action=paper] &,
-    [data-hover-action=lizard] & {
-      @extend .action-btn-small;
+    [data-click-action=paper] & {
+      @include action-btn-large();
+      top:0;
     }
-    [data-hover-action=spock] & {
-      @extend .action-btn-large;
+  }
+  &.action-btn-scissors {
+    background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/scissorsbutton.png");
+
+    [data-hover-action=scissors] &,
+    [data-click-action=scissors] & {
+      @include action-btn-large();
+      top:0;
+    }
+  }
+  &.action-btn-lizard {
+    background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/lizardbutton.png");
+
+    [data-hover-action=lizard] &,
+    [data-click-action=lizard] & {
+      @include action-btn-large();
+      top:0;
+    }
+  }
+  &.action-btn-spock {
+    background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/spockbutton.png");
+
+    [data-hover-action=spock] &,
+    [data-click-action=spock] & {
+      @include action-btn-large();
+      top:0;
     }
   }
 }
