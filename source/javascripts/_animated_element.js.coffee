@@ -19,6 +19,7 @@ class window.AnimatedElement extends Module
     unless @_timer
       @_timer = setInterval =>
         Helpers.debug "indefinitely"
+        @clearQueue()
         fn.apply(@)
       , interval
     return @
@@ -26,12 +27,13 @@ class window.AnimatedElement extends Module
   interrupt:()->
     Helpers.debug "interrupt"
     clearInterval(@_timer) if @_timer
-    # @clearQueue()
+    @clearQueue()
     @_timer = null
     return @
 
-  clearQueue:()->
-    @$el.clearQueue()
+  clearQueue:(queue=null)->
+    queue ||= @options.queue
+    @$el.finish(queue)
     return @
 
   # animate
