@@ -45,10 +45,12 @@ class window.AppAnimator extends Module
       .delay 200
       .enqueue ($el)=>
         $el.css "background-image": CSS.url @geoff.base_url, "throw_#{opponent_throw.type}.png"
-      .delay 2000
+      .delay 1000
       .enqueue ()=>
-        # @pow.$el.css "background-image": CSS.url @geoff.base_url, "throw_#{opponent_throw.type}.png"
+        image_name = if user_throw.does_beat opponent_throw then "#{user_throw.type}#{opponent_throw.type}" else "#{opponent_throw.type}#{user_throw.type}"
+        @pow.$el.find("img").attr "src": @geoff.base_url + "/starburst/#{image_name}.png"
         @pow.show()
+      .delay 1000
 
 
 
@@ -76,14 +78,23 @@ class window.AppAnimator extends Module
 
   animate_round_win:(fn=null)->
     @geoff.delay(600)
-    _(5).times ()=>
+    _(3).times ()=>
       @geoff
         .enqueue ($el)=>
+          $el.css "background-image": CSS.url @geoff.base_url, "losing/frame1.png"
+        .delay(200)
+        .enqueue ($el)=>
           $el.css "background-image": CSS.url @geoff.base_url, "losing/frame2.png"
-        .delay(300)
+        .delay(200)
+        .enqueue ($el)=>
+          $el.css "background-image": CSS.url @geoff.base_url, "losing/frame3.png"
+        .delay(200)
+        .enqueue ($el)=>
+          $el.css "background-image": CSS.url @geoff.base_url, "losing/frame4.png"
+        .delay(200)
         .enqueue ($el)=>
           $el.css "background-image": CSS.url @geoff.base_url, "losing/frame1.png"
-        .delay(300)
+        .delay(200)
 
     @geoff.enqueue =>
       fn.apply this if fn

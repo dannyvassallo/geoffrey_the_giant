@@ -28,6 +28,16 @@ $ ->
       "https://s3.amazonaws.com/myfangate.com/geoffrey/throw_scissors.png"
       "https://s3.amazonaws.com/myfangate.com/geoffrey/throw_spock.png"
       "https://s3.amazonaws.com/myfangate.com/geoffrey/throw_lizard.png"
+      "https://s3.amazonaws.com/myfangate.com/geoffrey/starburst/lizardpaper.png"
+      "https://s3.amazonaws.com/myfangate.com/geoffrey/starburst/lizardspock.png"
+      "https://s3.amazonaws.com/myfangate.com/geoffrey/starburst/paperrock.png"
+      "https://s3.amazonaws.com/myfangate.com/geoffrey/starburst/paperspock.png"
+      "https://s3.amazonaws.com/myfangate.com/geoffrey/starburst/rocklizard.png"
+      "https://s3.amazonaws.com/myfangate.com/geoffrey/starburst/rockscissors.png"
+      "https://s3.amazonaws.com/myfangate.com/geoffrey/starburst/scissorspaper.png"
+      "https://s3.amazonaws.com/myfangate.com/geoffrey/starburst/scissorslizard.png"
+      "https://s3.amazonaws.com/myfangate.com/geoffrey/starburst/spockscissors.png"
+      "https://s3.amazonaws.com/myfangate.com/geoffrey/starburst/spockrock.png"
 
     ]
 
