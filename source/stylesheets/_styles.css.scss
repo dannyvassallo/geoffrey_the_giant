@@ -23,6 +23,7 @@ body {
   background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/gamecontainerbackground.jpg");
   background-position: center;
   background-repeat: repeat-x;
+  overflow-y: hidden; 
 }
 
 #pow-container {
@@ -73,6 +74,7 @@ body {
   height: 90px;
   bottom:0;
   width:100%;
+  margin-bottom: 15px;
 }
 
 @mixin action-btn-large() {
