@@ -13,6 +13,10 @@ class window.Driver extends Module
     @$btn_container = $(".buttons")
     @$btns          = @$btn_container.find(".action-btn")
 
+    @user_tally     = $("#user-tally")
+    @opponent_tally = $("#opponent-tally")
+
+
     @enable_user_input()
     @new_game()
 
@@ -20,6 +24,12 @@ class window.Driver extends Module
 
   update_tally:()=>
     @user.round_wins
+    @opponent.round_wins
+    Helpers.debug(@user.round_wins)
+    Helpers.debug(@opponent.round_wins)
+    @user_tally.html("You: " + @user.round_wins)
+    @opponent_tally.html("Geoffrey: " + @opponent.round_wins)
+
 
   on_throw:(winner, loser)=>
     @animator.animate_throws(@user.last_throw, @opponent.last_throw)
@@ -70,6 +80,7 @@ class window.Driver extends Module
   # create a new game and setup listeners
   new_game:()->
     @unbind_game_listeners()
+    #@current_game 
     @current_game = new Game(@user, @opponent)
     @bind_game_listeners()
 
