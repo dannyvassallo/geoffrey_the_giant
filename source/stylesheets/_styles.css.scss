@@ -23,6 +23,7 @@ body {
   background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/gamecontainerbackground.jpg");
   background-position: center;
   background-repeat: repeat-x;
+  overflow-y: hidden; 
 }
 
 #pow-container {
@@ -70,7 +71,7 @@ body {
 
 .buttons {
   position: absolute;
-  height: 90px;
+  height: $action-btn-size-hover;
   bottom:0;
   width:100%;
 }
@@ -171,4 +172,23 @@ body {
   }
 }
 
+.score{
+position: absolute;
+font-size: 60px;
+padding: 20px;
+font-family: Aged, Arial;
+text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.6);
+color: #fff
+}
 
+#user-tally{
+
+left: 0
+
+}
+
+#opponent-tally{
+
+right: 0
+
+}
