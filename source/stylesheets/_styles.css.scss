@@ -15,6 +15,49 @@ body {
   background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/mastheadbackground.jpg")
 }
 
+#continue-wrap{
+position: relative;
+width: 640px;
+height: 147px;
+margin: 0 auto;
+padding-bottom: 50px;
+}
+
+#continue{
+position: absolute;
+width: 640px;
+height: 147px;
+background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/continuebackground.jpg")
+}
+
+.btn-play-game{
+  border-radius: 15px;
+  border: 0px;
+  padding: 14px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  color: #fff;
+  background-color: #73bf45;
+  font-size: 25px;
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  &:hover {
+    background-color: #ab1618;
+  }
+}
+
+.continue-btn{
+width: 263px;
+height: 60px;
+position: absolute;
+left: 361px;
+top: 78px;
+cursor: pointer;
+}
+
+
 #game-container{
   position: relative;
   min-width: $game-container-width;
@@ -156,21 +199,7 @@ body {
 
 
 
-.btn-play-game{
-  border-radius: 15px;
-  border: 0px;
-  padding: 14px;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  color: #fff;
-  background-color: #73bf45;
-  font-size: 30px;
-  
-  &:hover {
-    background-color: #ab1618;
-  }
-}
+
 
 .score{
 position: absolute;
