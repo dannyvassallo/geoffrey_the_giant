@@ -82,24 +82,24 @@ class window.AppAnimator extends Module
       @geoff
         .enqueue ($el)=>
           $el.css "background-image": CSS.url @geoff.base_url, "losing/frame1.png"
-        .delay(200)
+        .delay(100)
         .enqueue ($el)=>
           $el.css "background-image": CSS.url @geoff.base_url, "losing/frame2.png"
-        .delay(200)
+        .delay(100)
         .enqueue ($el)=>
           $el.css "background-image": CSS.url @geoff.base_url, "losing/frame3.png"
-        .delay(200)
+        .delay(100)
         .enqueue ($el)=>
           $el.css "background-image": CSS.url @geoff.base_url, "losing/frame4.png"
-        .delay(200)
+        .delay(100)
         .enqueue ($el)=>
           $el.css "background-image": CSS.url @geoff.base_url, "losing/frame1.png"
-        .delay(200)
+        .delay(100)
 
     @geoff.enqueue =>
       fn.apply this if fn
 
-    @geoff.delay 200
+    @geoff.delay 100
 
   animate_new_round:(callback=null)->
 
