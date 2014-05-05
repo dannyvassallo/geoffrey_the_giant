@@ -16,6 +16,7 @@ class window.Driver extends Module
     @user_tally     = $("#user-tally")
     @opponent_tally = $("#opponent-tally")
 
+    @share_modal    = $("#share-modal").remodal()
 
     @enable_user_input()
     @new_game()
@@ -51,11 +52,15 @@ class window.Driver extends Module
   on_game_over:(winner, loser)=>
     _gaq.push [ "_trackEvent", "Game", "State", "Game Over" ]
     @new_game()
+
   # allow user to click buttons
   enable_user_input:()=>
     $btn_container = @$btn_container
     $btn_container.attr "data-click-action", null
     self = this
+    
+    # just call this when you want to open the modal
+    @share_modal.open()
 
     @$btns
       .removeClass("disabled")
