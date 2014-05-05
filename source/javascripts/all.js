@@ -1,7 +1,8 @@
 //= require vendor/_underscore.min
 //= require vendor/_jquery.min
 //= require vendor/_event_emitter.min
-//= require vendor/_jquery.reveal
+//= require vendor/_jquery.remodal
+//= require vendor/_events
 //  
 //= require _helpers
 //  
