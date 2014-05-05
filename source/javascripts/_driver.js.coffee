@@ -49,8 +49,8 @@ class window.Driver extends Module
     @current_game.user_throw(action)
 
   on_game_over:(winner, loser)=>
+    _gaq.push [ "_trackEvent", "Game", "State", "Game Over" ]
     @new_game()
-
   # allow user to click buttons
   enable_user_input:()=>
     $btn_container = @$btn_container
@@ -61,6 +61,7 @@ class window.Driver extends Module
       .removeClass("disabled")
       .on "click", (e)->
         e.preventDefault()
+        _gaq.push [ "_trackEvent", "Buttons", "Clicked", $(this).data("action") ]
         self.click_action($(this).data("action"))
       .on "mouseenter", ->
         $btn_container.attr "data-hover-action", $(this).data("action")
@@ -79,6 +80,7 @@ class window.Driver extends Module
 
   # create a new game and setup listeners
   new_game:()->
+    _gaq.push [ "_trackEvent", "Game", "State", "New Game" ]
     @unbind_game_listeners()
     #@current_game 
     @current_game = new Game(@user, @opponent)

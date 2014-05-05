@@ -15,5 +15,6 @@
 //= require _throw
 //= require _driver
 //= require _app
+//= require _analytics
 //  
 //= require_tree .
