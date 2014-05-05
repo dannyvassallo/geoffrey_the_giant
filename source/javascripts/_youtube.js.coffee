@@ -18,7 +18,7 @@ window.onPlayerReady = (event) ->
 window.onPlayerStateChange = (event) ->
   if event.data is YT.PlayerState.PLAYING
     $(".btn-play-game").removeClass "hidden"
-
+    _gaq.push [ "_trackEvent", "Buttons", "Clicked", "Play Video Button" ]
     Helpers.scroll_to $("#player-container")
 
   # if event.data is YT.PlayerState.ENDED
@@ -26,7 +26,7 @@ window.onPlayerStateChange = (event) ->
 $ ->
   $(".btn-play-game").on "click", ->
     $("#game-container").removeClass "hidden"
-
+    _gaq.push [ "_trackEvent", "Buttons", "Clicked", "Play Game Button" ]
   $("[data-scroll-to]").click (e)->
     e.preventDefault()
     $this = $(@)
