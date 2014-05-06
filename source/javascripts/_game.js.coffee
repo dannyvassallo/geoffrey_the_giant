@@ -36,6 +36,7 @@ class window.Game extends Module
     return @winner
 
 
+
   user_throw:(gesture)->
     return false if @over
 

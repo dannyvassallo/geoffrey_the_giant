@@ -122,3 +122,13 @@ class window.AppAnimator extends Module
             $el.css "background-image": CSS.url @geoff.base_url, "breathing/frame2.png"
           .delay 200
 
+
+  animate_game_over:(fn=null)->
+
+    @geoff.enqueue ($el)=>
+
+      if @winner == @user
+        share_modal.open()
+      else
+        lost_modal.open()
+
