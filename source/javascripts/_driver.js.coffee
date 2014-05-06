@@ -51,7 +51,9 @@ class window.Driver extends Module
   on_game_over:(winner, loser)=>
     _gaq.push [ "_trackEvent", "Game", "State", "Game Over" ]
     if @user is winner
-      @animator.animate_game_over()
+      @animator.animate_game_win()
+    else
+      @animator.animate_game_loss()
     
     @new_game()
 
@@ -61,8 +63,6 @@ class window.Driver extends Module
     $btn_container.attr "data-click-action", null
     self = this
     
-    
-
     @$btns
       .removeClass("disabled")
       .on "click", (e)->

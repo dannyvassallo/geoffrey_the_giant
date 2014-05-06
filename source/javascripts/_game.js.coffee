@@ -66,7 +66,8 @@ class window.Game extends Module
     return round_winner
 
   is_game_over:()->
-    @user.round_wins > 1 || @opponent.round_wins > 1
+    checkmate = Math.floor(@rounds / 2.0)
+    @user.round_wins > checkmate || @opponent.round_wins > checkmate
 
   count_rounds:()->
     @winner_history.length
