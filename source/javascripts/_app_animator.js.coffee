@@ -122,3 +122,10 @@ class window.AppAnimator extends Module
             $el.css "background-image": CSS.url @geoff.base_url, "breathing/frame2.png"
           .delay 200
 
+  animate_game_win:()->
+    @geoff.enqueue ($el)=>
+      share_modal.open()
+
+  animate_game_loss:()->
+    @geoff.enqueue ($el)=>
+      lost_modal.open()

@@ -1,38 +1,76 @@
-<div id="masthead">
-  <img src="https://s3.amazonaws.com/myfangate.com/geoffrey/logo.png">
-  <div class="clouds"></div>
-</div>
+<div class="remodal-bg">
+  <div id="masthead">
+    <img src="https://s3.amazonaws.com/myfangate.com/geoffrey/logo.png">
+    <div class="clouds"></div>
+  </div>
 
-
-<div id="player-container">
-<img src="https://s3.amazonaws.com/myfangate.com/geoffrey/header.jpg">
-<br>
-<div id="player"></div>
-<br>
+  <div id="player-container">
+    <img src="https://s3.amazonaws.com/myfangate.com/geoffrey/header.jpg">
+    <br>
+    <div id="player"></div>
+    <br>
     <div id="continue-wrap">
       <div id="continue">
         <button class="btn-play-game hidden" data-scroll-to="#game-container">Play the Game</button>
         <a href="http://www.geoffreythegiant.com"><div class="continue-btn"></div></a>
       </div>
     </div>
-</div>
-
-<div id="game-container" class="hidden">
-  <div id="score-container">
-    <div id="user-tally" class="score">You: 0</div>
-    <div id="opponent-tally" class="score">Geoffrey: 0</div>
   </div>
-  <div id="pow-container">
-    <div id="pow">
-      <img src="https://lh6.ggpht.com/ste-NwJCO0OvYmVQfx44NQqYP9VZlCZALdSPS4FHVBjK7ANOWF6FVRsZYswdy_50C26Q=w300">
+
+  <div id="game-container" class="hidden">
+    <div id="score-container">
+      <div id="user-tally" class="score">You: 0</div>
+      <div id="opponent-tally" class="score">Geoffrey: 0</div>
     </div>
+    <div id="pow-container">
+      <div id="pow">
+        <img src="https://lh6.ggpht.com/ste-NwJCO0OvYmVQfx44NQqYP9VZlCZALdSPS4FHVBjK7ANOWF6FVRsZYswdy_50C26Q=w300">
+      </div>
+    </div>
+
+  	<div id="geoff"></div>
+    
+    <div class="clouds"></div>
+
+  	<div class="buttons">
+  	  <%= partial "partials/buttons" %>
+  	</div>
   </div>
 
-	<div id="geoff"></div>
-  
-  <div class="clouds"></div>
 
-	<div class="buttons">
-	  <%= partial "partials/buttons" %>
-	</div>
+<div class="remodal" id="share-modal">
+  <h1>Congratulations! You've Won!</h1>
+  <h3>Share on the social media site of you choice to redeem your prize.</h3>
+    <div class="share-icons">
+      <div class="share">
+          <i class="fa fa-facebook-square"></i>
+          <p>
+          Share on Facebook
+          </p>
+      </div>
+      <div class="share">
+          <i class="fa fa-twitter-square"></i>
+          <p>
+          Share on Twitter
+          </p>
+      </div>
+      <div class="share">
+          <i class="fa fa-google-plus-square"></i>
+          <p>
+          Share on Google Plus
+          </p>
+      </div>
+    </div>
+  <br>
+  <a class="remodal-confirm modal-ok-style" href="#">OK</a>
 </div>
+
+<div class="remodal" id="lost-modal">
+  <h1>Sorry! You've Lost!</h1>
+  <h3>Please try again. Keep playing to win cool prizes!</h3>
+  <br>
+  <a class="remodal-confirm modal-ok-style" href="#">OK</a>
+</div>
+
+</div>
+

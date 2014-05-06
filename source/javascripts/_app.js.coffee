@@ -1,4 +1,7 @@
 $ ->
+  window.share_modal    = $("#share-modal").remodal()
+  window.lost_modal    = $("#lost-modal").remodal()
+
   window.driver = new Driver("You")
 
   Helpers.preload_images [

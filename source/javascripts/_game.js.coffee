@@ -36,6 +36,7 @@ class window.Game extends Module
     return @winner
 
 
+
   user_throw:(gesture)->
     return false if @over
 
@@ -60,9 +61,13 @@ class window.Game extends Module
 
     @trigger("throw.after", [round_winner, round_loser])
 
-    @game_over() if @count_rounds() >= @rounds
+    @game_over() if @is_game_over()
 
     return round_winner
+
+  is_game_over:()->
+    checkmate = Math.floor(@rounds / 2.0)
+    @user.round_wins > checkmate || @opponent.round_wins > checkmate
 
   count_rounds:()->
     @winner_history.length
