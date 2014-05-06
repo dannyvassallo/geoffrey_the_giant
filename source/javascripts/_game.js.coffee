@@ -61,9 +61,12 @@ class window.Game extends Module
 
     @trigger("throw.after", [round_winner, round_loser])
 
-    @game_over() if @count_rounds() >= @rounds
+    @game_over() if @is_game_over()
 
     return round_winner
+
+  is_game_over:()->
+    @user.round_wins > 1 || @opponent.round_wins > 1
 
   count_rounds:()->
     @winner_history.length
