@@ -15,7 +15,7 @@ class window.Driver extends Module
 
     @user_tally     = $("#user-tally")
     @opponent_tally = $("#opponent-tally")
-
+    @rounds         = $("#rounds")
 
     @enable_user_input()
     @new_game()
@@ -29,6 +29,7 @@ class window.Driver extends Module
     Helpers.debug(@opponent.round_wins)
     @user_tally.html("You: " + @user.round_wins)
     @opponent_tally.html("Geoffrey: " + @opponent.round_wins)
+    @rounds.html("Round " + @user.game_wins)
 
 
   on_throw:(winner, loser)=>

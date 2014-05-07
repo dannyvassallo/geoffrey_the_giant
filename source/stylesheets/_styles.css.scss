@@ -210,14 +210,22 @@ cursor: pointer;
 
 #user-tally{
 
-  left: 0
+  left: 0;
+  font-size: 35px;
 
 }
 
 #opponent-tally{
 
-  right: 0
+  right: 0;
+  font-size: 35px;
 
+}
+
+#rounds{
+
+width: 100%;
+color: #dcbd3e;
 }
 
 .share-icons {
