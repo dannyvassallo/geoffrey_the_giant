@@ -79,11 +79,11 @@ html.remodal_lock, body.remodal_lock {
 }
 
 body.remodal_active .remodal-bg {
-    -webkit-filter: blur(3px);
+    /*-webkit-filter: blur(3px);
     -moz-filter: blur(3px);
     -o-filter: blur(3px);
     -ms-filter: blur(3px);
-    filter: blur(3px);
+    filter: blur(3px);*/
 }
 
 /* Overlay default theme styles */
@@ -91,10 +91,10 @@ body.remodal_active .remodal-bg {
 .remodal-overlay {
     opacity: 0;
     background: rgba(33, 36, 46, 0.95);
-    -webkit-transition: opacity 0.2s linear;
+    /*-webkit-transition: opacity 0.2s linear;
     -moz-transition: opacity 0.2s linear;
     -o-transition: opacity 0.2s linear;
-    transition: opacity 0.2s linear;
+    transition: opacity 0.2s linear;*/
 }
 
 body.remodal_active .remodal-overlay {

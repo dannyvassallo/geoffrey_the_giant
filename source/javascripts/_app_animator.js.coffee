@@ -13,6 +13,8 @@ class window.AppAnimator extends Module
 
     @pow    = new Pow "#pow-container"
 
+    @rounds = new AnimatedElement "#rounds"
+
 
   animate_throws:(user_throw, opponent_throw)->
     @geoff.interrupt()
@@ -77,29 +79,24 @@ class window.AppAnimator extends Module
 
 
   animate_round_win:(fn=null)->
-    @geoff.delay(600)
-    _(3).times ()=>
+    @geoff.delay(500)
+    _(2).times ()=>
       @geoff
         .enqueue ($el)=>
           $el.css "background-image": CSS.url @geoff.base_url, "losing/frame1.png"
-        .delay(100)
+        .delay(150)
         .enqueue ($el)=>
           $el.css "background-image": CSS.url @geoff.base_url, "losing/frame2.png"
-        .delay(100)
+        .delay(150)
         .enqueue ($el)=>
           $el.css "background-image": CSS.url @geoff.base_url, "losing/frame3.png"
-        .delay(100)
+        .delay(150)
         .enqueue ($el)=>
           $el.css "background-image": CSS.url @geoff.base_url, "losing/frame4.png"
-        .delay(100)
-        .enqueue ($el)=>
-          $el.css "background-image": CSS.url @geoff.base_url, "losing/frame1.png"
-        .delay(100)
+        .delay(150)
 
     @geoff.enqueue =>
-      fn.apply this if fn
-
-    @geoff.delay 100
+      fn.apply(this) if fn
 
   animate_new_round:(callback=null)->
 
@@ -123,9 +120,19 @@ class window.AppAnimator extends Module
           .delay 200
 
   animate_game_win:()->
-    @geoff.enqueue ($el)=>
-      share_modal.open()
+    @geoff
+      .enqueue ($el)=>
+        @rounds.$el.animo {
+          animation:  "tada"
+          duration:   0.7
+          timing:     "linear"
+        }
+    Social.PRIZES.length > 0 && @geoff
+      .delay 500
+      .enqueue ($el)=>
+        share_modal.open()
 
   animate_game_loss:()->
-    @geoff.enqueue ($el)=>
-      lost_modal.open()
+    Social.PRIZES.length > 0 && @geoff
+      .enqueue ($el)=>
+        lost_modal.open()

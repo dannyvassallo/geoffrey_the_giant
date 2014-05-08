@@ -1,4 +1,5 @@
-<div class="remodal-bg">
+<!-- remodal-bg -->
+<div class="">
   <div id="masthead">
     <img src="https://s3.amazonaws.com/myfangate.com/geoffrey/logo.png">
     <div class="clouds"></div>
@@ -19,9 +20,9 @@
 
   <div id="game-container" class="hidden">
     <div id="score-container">
-      <div id="user-tally" class="score">You: 0</div>
-      <div id="rounds" class="score">Round 1</div>
-      <div id="opponent-tally" class="score">Geoffrey: 0</div>
+      <div id="user-tally" class="score">You: <span>0</span></div>
+      <div id="rounds" class="score">Round <span>1</span></div>
+      <div id="opponent-tally" class="score">Geoffrey: <span>0</span></div>
     </div>
     <div id="pow-container">
       <div id="pow">
@@ -39,40 +40,51 @@
   </div>
 
 
-<div class="remodal" id="share-modal">
-  <h1>Congratulations! You've defeated The Giant!</h1>
-  <h3>Share on the social media site of you choice to redeem your prize.</h3>
-    <div class="share-icons">
-      <div class="share">
-          <i class="fa fa-facebook-square"></i>
-          <p>
-          Share on Facebook
-          </p>
+  <div class="remodal" id="share-modal">
+    <h1>Congratulations! You've defeated The Giant!</h1>
+    <h2>Share to redeem your prize</h2>
+      <div class="share-icons">
+        <div class="share" data-social="facebook">
+            <i class="fa fa-facebook-square"></i>
+            <p>
+            Share on Facebook
+            </p>
+        </div>
+        <div class="share" data-social="twitter">
+            <i class="fa fa-twitter-square"></i>
+            <p>
+            Share on Twitter
+            </p>
+        </div>
+        <div class="share" data-social="google">
+            <i class="fa fa-google-plus-square"></i>
+            <p>
+            Share on Google Plus
+            </p>
+        </div>
       </div>
-      <div class="share">
-          <i class="fa fa-twitter-square"></i>
-          <p>
-          Share on Twitter
-          </p>
-      </div>
-      <div class="share">
-          <i class="fa fa-google-plus-square"></i>
-          <p>
-          Share on Google Plus
-          </p>
-      </div>
-    </div>
-  <br>
-  <a class="remodal-cancel modal-cancel-style" href="#">Cancel</a>
-  <a class="remodal-confirm modal-ok-style" href="#">OK</a>
-</div>
+    <br>
+    <a class="remodal-confirm modal-ok-style" href="#">Keep Playing</a>
+  </div>
 
-<div class="remodal" id="lost-modal">
-  <h1>Sorry! You've been defeated by The Giant!</h1>
-  <h3>Please try again. Keep playing to win cool prizes!</h3>
-  <br>
-  <a class="remodal-confirm modal-ok-style" href="#">OK</a>
-</div>
+  <div class="remodal" id="lost-modal">
+    <h1>Oh no! The Giant has defeated you.</h1>
+    <h2>Advance to the next round for a free download!</h2>
+    <br>
+    <a class="remodal-confirm modal-ok-style" href="#">Try Again</a>
+  </div>
+
+  <div class="remodal" id="download-modal">
+    <h1>You've earned a free download!</h1>
+    <a class="prize-link" href="#" target="_blank">
+      <h2>Click to download</h2>
+      <div class="large-icon">
+        <i class="fa fa-download"></i>
+      </div>
+      <h2 class="prize-name">Prize</h2>
+    </a>
+  </div>
+
 
 </div>
 

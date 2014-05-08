@@ -16,19 +16,19 @@ body {
 }
 
 #continue-wrap{
-position: relative;
-width: 640px;
-height: 147px;
-margin: 0 auto;
-padding-bottom: 50px;
+  position: relative;
+  width: 640px;
+  height: 147px;
+  margin: 0 auto;
+  padding-bottom: 50px;
 }
 
 #continue{
-position: absolute;
-width: 640px;
-height: 147px;
-background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/continuebackground2.jpg");
-background-repeat: no-repeat;
+  position: absolute;
+  width: 640px;
+  height: 147px;
+  background-image: url("https://s3.amazonaws.com/myfangate.com/geoffrey/continuebackground2.jpg");
+  background-repeat: no-repeat;
 }
 
 .btn-play-game{
@@ -51,12 +51,12 @@ background-repeat: no-repeat;
 }
 
 .continue-btn{
-width: 263px;
-height: 60px;
-position: absolute;
-left: 361px;
-top: 0px;
-cursor: pointer;
+  width: 263px;
+  height: 60px;
+  position: absolute;
+  left: 361px;
+  top: 0px;
+  cursor: pointer;
 }
 
 
@@ -205,27 +205,27 @@ cursor: pointer;
   padding: 20px;
   font-family: Aged, Arial;
   text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.6);
-  color: #fff
+  color: #fff;
+  span {
+    font-size: 160%;
+    line-height: 0;
+  }
 }
 
 #user-tally{
-
   left: 0;
   font-size: 35px;
-
 }
 
 #opponent-tally{
-
   right: 0;
   font-size: 35px;
-
 }
 
 #rounds{
-
-width: 100%;
-color: #dcbd3e;
+  color: #dcbd3e;
+  left: 0;
+  right: 13px;
 }
 
 .share-icons {
@@ -233,23 +233,39 @@ color: #dcbd3e;
     display: inline-block;
   }
 }
-
-.share{
-
-  padding: 20px;
-  &:hover{
-    color: #ccc;
-    cursor: pointer;
-  }
+.large-icon {
+  font-size: 60px;
 }
 
-.fa{
-
-  color: #000 !important;
-  font-size: 60px !important;
-  &:hover{
-    color: #ccc;
+.share {
+  padding: 20px;
+  color: black;
+  font-size: 24px;
+  &:hover {
+    color: gray;
     cursor: pointer;
+  }
+
+  .fa {
+    @extend .large-icon;
+  }
+
+  &.disabled {
+    color: #ccc;
+    cursor: default;
+  }
+}
+a.prize-link {
+  &, &:visited, &:active {
+    color: black;
+  }
+  &:hover {
+    color: gray;
+  }
+}
+.remodal {
+  &#download-modal .large-icon {
+    margin-bottom: 22px;
   }
 }
 
@@ -280,15 +296,11 @@ color: #dcbd3e;
 }
 
 .remodal p, h1, h3 {
-
   font-family: "Aged", sans-serif !important;
-
 }
 
 /* REMOVE EXIT BUTTON FROM MODAL */
 
 .remodal-close {
-
-display: none !important;
-
+  display: none !important;
 }
