@@ -7,7 +7,7 @@ class window.Game extends Module
   
 
   # instance methods
-  constructor:(@user, @opponent, @rounds=3)->
+  constructor:(@user, @opponent, @rounds=5)->
     @throw_history  = []
     @winner_history = []
     @over           = false

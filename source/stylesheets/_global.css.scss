@@ -1,20 +1,22 @@
 @font-face { 
- font-family: aged; 
- src: url('http://www.geoffreythegiant.com/wp-content/themes/spacecloud/fnt/Aged_Book.ttf'); 
+ font-family: "aged"; 
+ src: url('/fonts/Aged_Book.ttf'); 
 }
 
 @font-face { 
- font-family: Droid; 
- src: url('http://www.geoffreythegiant.com/wp-content/themes/spacecloud/fnt/DroidSans.ttf');
+ font-family: "Droid"; 
+ src: url('/fonts/DroidSans.ttf');
  font-weight:normal;
 }
 
 @font-face { 
- font-family: Droid; 
- src: url('http://www.geoffreythegiant.com/wp-content/themes/spacecloud/fnt/DroidSans-Bold.ttf');
+ font-family: "Droid"; 
+ src: url('/fonts/DroidSans-Bold.ttf');
  font-weight:bold;
 } 
 
 .hidden {
   display: none;
 }
+
+
