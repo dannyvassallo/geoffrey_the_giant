@@ -18,3 +18,8 @@
 .hidden {
   display: none;
 }
+
+.img-preloading {
+  width: $game-container-width;
+  height:$game-container-height;
+}
