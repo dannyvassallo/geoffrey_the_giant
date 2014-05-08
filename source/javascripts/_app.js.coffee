@@ -1,6 +1,11 @@
 $ ->
-  window.share_modal    = $("#share-modal").remodal()
-  window.lost_modal    = $("#lost-modal").remodal()
+  window.$share_modal     = $("#share-modal")
+  window.$lost_modal      = $("#lost-modal")
+  window.$download_modal  = $("#download-modal")
+
+  window.share_modal      = $share_modal.remodal()
+  window.lost_modal       = $lost_modal.remodal()
+  window.download_modal   = $download_modal.remodal()
 
   window.driver = new Driver("You")
 

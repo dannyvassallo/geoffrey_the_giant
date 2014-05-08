@@ -13,22 +13,25 @@ class window.Driver extends Module
     @$btn_container = $(".buttons")
     @$btns          = @$btn_container.find(".action-btn")
 
-    @user_tally     = $("#user-tally")
-    @opponent_tally = $("#opponent-tally")
-
+    @$user_tally     = $("#user-tally span")
+    @$opponent_tally = $("#opponent-tally span")
+    @$rounds         = $("#rounds span")
 
     @enable_user_input()
     @new_game()
 
     @animator.animate_new_round()
 
+    @facebook_social = new Social(".share[data-social=facebook]")
+    @twitter_social = new Social(".share[data-social=twitter]")
+    @google_social = new Social(".share[data-social=google]")
+
   update_tally:()=>
-    @user.round_wins
-    @opponent.round_wins
     Helpers.debug(@user.round_wins)
     Helpers.debug(@opponent.round_wins)
-    @user_tally.html("You: " + @user.round_wins)
-    @opponent_tally.html("Geoffrey: " + @opponent.round_wins)
+    @$user_tally.html(@user.round_wins)
+    @$opponent_tally.html(@opponent.round_wins)
+    @$rounds.html(@user.game_wins + 1)
 
 
   on_throw:(winner, loser)=>
@@ -47,6 +50,7 @@ class window.Driver extends Module
     @$btn_container.attr "data-click-action", action
     @disable_user_input()
     @current_game.user_throw(action)
+
 
   on_game_over:(winner, loser)=>
     _gaq.push [ "_trackEvent", "Game", "State", "Game Over" ]
@@ -88,7 +92,6 @@ class window.Driver extends Module
   new_game:()->
     _gaq.push [ "_trackEvent", "Game", "State", "New Game" ]
     @unbind_game_listeners()
-    #@current_game 
     @current_game = new Game(@user, @opponent)
     @bind_game_listeners()
 
