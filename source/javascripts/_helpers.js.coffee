@@ -6,7 +6,7 @@ window.Helpers =
 
   preload_images: (url_array)->
     _(url_array).each (url)->
-      $('<img />').attr('src',url).appendTo('body').css
+      $('<img />').attr('src',url).addClass("img-preloading").appendTo('body').css
         position:   "absolute"
         left:       "-9999px"
         right:      "-9999px"
