@@ -19,5 +19,5 @@ window.Helpers =
 
 window.CSS =
   url:()->
-    url = Array::slice.call(arguments,0).join("/").replace("//","/")
+    url = Array::slice.call(arguments,0).join("/")
     "url(\"#{url}\")"

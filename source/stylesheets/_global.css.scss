@@ -1,6 +1,13 @@
-@font-face { 
- font-family: "aged"; 
- src: url('/fonts/Aged_Book.ttf'); 
+@font-face {
+    font-family: 'Aged';
+    src: url('/fonts/aged_book-webfont.eot');
+    src: url('/fonts/aged_book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/aged_book-webfont.woff') format('woff'),
+         url('/fonts/aged_book-webfont.ttf') format('truetype'),
+         url('/fonts/aged_book-webfont.svg#agedbookregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
 @font-face { 
