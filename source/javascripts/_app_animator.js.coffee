@@ -25,22 +25,22 @@ class window.AppAnimator extends Module
       @geoff
         .enqueue ($el)=>
           $el.css "background-image": CSS.url @geoff.base_url, "shake/frame1.png"
-        .delay 50 
+        .delay 60 
         .enqueue ($el)=>
           $el.css "background-image": CSS.url @geoff.base_url, "shake/frame2.png"
-        .delay 50
+        .delay 60
         .enqueue ($el)=>
           $el.css "background-image": CSS.url @geoff.base_url, "shake/frame3.png"
-        .delay 50
+        .delay 60
         .enqueue ($el)=>
           $el.css "background-image": CSS.url @geoff.base_url, "shake/frame4.png"
-        .delay 50
+        .delay 60
         .enqueue ($el)=>
           $el.css "background-image": CSS.url @geoff.base_url, "shake/frame3.png"
-        .delay 50
+        .delay 60
         .enqueue ($el)=>
           $el.css "background-image": CSS.url @geoff.base_url, "shake/frame2.png"
-        .delay 50
+        .delay 60
 
 
     @geoff

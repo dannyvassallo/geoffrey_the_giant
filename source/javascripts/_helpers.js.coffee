@@ -10,7 +10,7 @@ window.Helpers =
         position:   "absolute"
         left:       "-9999px"
         right:      "-9999px"
-        visibility: "hidden"
+        display: "none"
 
   debug: ()->
     debug = true # toggle this

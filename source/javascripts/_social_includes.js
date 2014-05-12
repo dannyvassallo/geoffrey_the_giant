@@ -9,7 +9,7 @@ window.fbAsyncInit = function() {
    var js, fjs = d.getElementsByTagName(s)[0];
    if (d.getElementById(id)) {return;}
    js = d.createElement(s); js.id = id;
-   js.src = "//connect.facebook.net/en_US/sdk.js";
+   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=371897399581991&version=v2.0";
    fjs.parentNode.insertBefore(js, fjs);
  }(document, 'script', 'facebook-jssdk'));
 
@@ -19,3 +19,6 @@ window.fbAsyncInit = function() {
   po.src = 'https://apis.google.com/js/plusone.js';
   var s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 })(document);
+
+
+
