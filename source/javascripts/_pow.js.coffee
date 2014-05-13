@@ -26,6 +26,10 @@ class window.Pow extends Module
 
   _before_show: (e)=>
     Helpers.debug "_before_show"
+
+    @_after_show_triggered = false
+    @_after_show_timer = setTimeout @_after_show, @options.show_duration
+
     @$el
       .removeClass  "hidden"
       .animo {
@@ -35,6 +39,10 @@ class window.Pow extends Module
       }, @_after_show
 
   _after_show: (e)=>
+    return unless !@_after_show_triggered
+    clearTimeout @_after_show_timer
+    @_after_show_triggered = true
+
     Helpers.debug "_after_show"
 
     if @options.linger_duration > 0
@@ -42,6 +50,10 @@ class window.Pow extends Module
 
   _before_hide: (e)=>
     Helpers.debug "_before_hide"
+
+    @_after_hide_triggered = false
+    @_after_hide_timer = setTimeout @_after_hide, @options.hide_duration
+
     @$el
       .animo {
         animation:  @options.hide_animation
@@ -50,6 +62,10 @@ class window.Pow extends Module
       }, @_after_hide
 
   _after_hide: (e)=>
+    return unless !@_after_hide_triggered
+    clearTimeout @_after_hide_timer
+    @_after_hide_triggered = true
+
     Helpers.debug "_after_hide"
     @$el.addClass     "hidden"
 

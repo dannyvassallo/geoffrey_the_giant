@@ -1,23 +1,23 @@
 @font-face {
-    font-family: 'Aged';
-    src: url('/fonts/aged_book-webfont.eot');
-    src: url('/fonts/aged_book-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/aged_book-webfont.woff') format('woff'),
-         url('/fonts/aged_book-webfont.ttf') format('truetype'),
-         url('/fonts/aged_book-webfont.svg#agedbookregular') format('svg');
+    font-family: 'AgedBook';
+    src: url('fonts/aged_book-webfont.eot');
+    src: url('fonts/aged_book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/aged_book-webfont.woff') format('woff'),
+         url('fonts/aged_book-webfont.ttf') format('truetype'),
+         url('fonts/aged_book-webfont.svg#agedbookregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face { 
  font-family: "Droid"; 
- src: url('/fonts/DroidSans.ttf');
+ src: url('fonts/DroidSans.ttf');
  font-weight:normal;
 }
 
 @font-face { 
  font-family: "Droid"; 
- src: url('/fonts/DroidSans-Bold.ttf');
+ src: url('fonts/DroidSans-Bold.ttf');
  font-weight:bold;
 } 
 

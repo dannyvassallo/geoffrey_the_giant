@@ -40,7 +40,7 @@ body {
   margin-top: 20px;
   color: #fff;
   background-color: #73bf45;
-  font-family: Aged, sans-serif;
+  font-family: "AgedBook", sans-serif;
   font-size: 40px;
   position: absolute;
   top: -20px;
@@ -78,7 +78,8 @@ body {
   right:0;
   bottom:0;
   left:0;
-
+  overflow: hidden;
+  max-width: 97%;
   #pow {
     z-index: 800;
     position: absolute;
@@ -86,6 +87,7 @@ body {
     bottom:0;
     width: $game-container-width;
     height:$game-container-height;
+    overflow: hidden;
     left:50%;
     margin-left: - ($game-container-width / 2);
   }
@@ -210,7 +212,7 @@ vertical-align: middle;
   position: absolute;
   font-size: 60px;
   padding: 20px;
-  font-family: Aged, Arial;
+  font-family: "AgedBook", Arial;
   text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.6);
   color: #fff;
   span {
@@ -283,7 +285,7 @@ a.prize-link {
   color: #fff;
   background-color: #ab1618;
   font-size: 25px;
-  font-family: "Aged", sans-serif;
+  font-family: "AgedBook", sans-serif;
   &:hover {
     background-color: #dd1a1d;
   }
@@ -296,14 +298,14 @@ a.prize-link {
   color: #fff;
   background-color: #73bf45;
   font-size: 25px;
-  font-family: "Aged", sans-serif;
+  font-family: "AgedBook", sans-serif;
   &:hover {
     background-color: #89de55;
   }
 }
 
 .remodal p, h1, h3 {
-  font-family: "Aged", sans-serif !important;
+  font-family: "AgedBook", sans-serif;
 }
 
 /* REMOVE EXIT BUTTON FROM MODAL */

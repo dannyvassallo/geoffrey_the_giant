@@ -16,6 +16,9 @@ class window.AppAnimator extends Module
     @rounds = new AnimatedElement "#rounds"
 
 
+
+
+
   animate_throws:(user_throw, opponent_throw)->
     @geoff.interrupt()
 
@@ -24,29 +27,29 @@ class window.AppAnimator extends Module
     _(3).times ()=>
       @geoff
         .enqueue ($el)=>
-          $el.css "background-image": CSS.url @geoff.base_url, "shake/frame1.png"
+          $el.html( "<img src=\"#{@geoff.base_url}/shake/frame1.png\">" )
         .delay 60 
         .enqueue ($el)=>
-          $el.css "background-image": CSS.url @geoff.base_url, "shake/frame2.png"
+          $el.html( "<img src=\"#{@geoff.base_url}/shake/frame2.png\">" )
         .delay 60
         .enqueue ($el)=>
-          $el.css "background-image": CSS.url @geoff.base_url, "shake/frame3.png"
+          $el.html( "<img src=\"#{@geoff.base_url}/shake/frame3.png\">" )
         .delay 60
         .enqueue ($el)=>
-          $el.css "background-image": CSS.url @geoff.base_url, "shake/frame4.png"
+          $el.html( "<img src=\"#{@geoff.base_url}/shake/frame4.png\">" )
         .delay 60
         .enqueue ($el)=>
-          $el.css "background-image": CSS.url @geoff.base_url, "shake/frame3.png"
+          $el.html( "<img src=\"#{@geoff.base_url}/shake/frame3.png\">" )
         .delay 60
         .enqueue ($el)=>
-          $el.css "background-image": CSS.url @geoff.base_url, "shake/frame2.png"
+          $el.html( "<img src=\"#{@geoff.base_url}/shake/frame2.png\">" )
         .delay 60
 
 
     @geoff
       .delay 200
       .enqueue ($el)=>
-        $el.css "background-image": CSS.url @geoff.base_url, "throw_#{opponent_throw.type}.png"
+          $el.html( "<img src=\"#{@geoff.base_url}/throw_#{opponent_throw.type}.png\">" )
       .delay 1000
       .enqueue ()=>
         image_name = if user_throw.does_beat opponent_throw then "#{user_throw.type}#{opponent_throw.type}" else "#{opponent_throw.type}#{user_throw.type}"
@@ -59,19 +62,19 @@ class window.AppAnimator extends Module
   animate_round_loss:(fn=null)->
     @geoff
       .enqueue ($el)=>
-        $el.css "background-image": CSS.url @geoff.base_url, "winning/frame1.png"
+          $el.html( "<img src=\"#{@geoff.base_url}/winning/frame1.png\">" )
       .delay 100 
       .enqueue ($el)=>
-        $el.css "background-image": CSS.url @geoff.base_url, "winning/frame2.png"
+          $el.html( "<img src=\"#{@geoff.base_url}/winning/frame2.png\">" )
       .delay 100
       .enqueue ($el)=>
-        $el.css "background-image": CSS.url @geoff.base_url, "winning/frame3.png"
+          $el.html( "<img src=\"#{@geoff.base_url}/winning/frame3.png\">" )
       .delay 100
       .enqueue ($el)=>
-        $el.css "background-image": CSS.url @geoff.base_url, "winning/frame4.png"
+          $el.html( "<img src=\"#{@geoff.base_url}/winning/frame4.png\">" )
       .delay 100
       .enqueue ($el)=>
-        $el.css "background-image": CSS.url @geoff.base_url, "winning/frame5.png"
+          $el.html( "<img src=\"#{@geoff.base_url}/winning/frame5.png\">" )
       .delay 600
 
     @geoff.enqueue =>
@@ -83,16 +86,16 @@ class window.AppAnimator extends Module
     _(2).times ()=>
       @geoff
         .enqueue ($el)=>
-          $el.css "background-image": CSS.url @geoff.base_url, "losing/frame1.png"
+          $el.html( "<img src=\"#{@geoff.base_url}/losing/frame1.png\">" )
         .delay(150)
         .enqueue ($el)=>
-          $el.css "background-image": CSS.url @geoff.base_url, "losing/frame2.png"
+          $el.html( "<img src=\"#{@geoff.base_url}/losing/frame2.png\">" )
         .delay(150)
         .enqueue ($el)=>
-          $el.css "background-image": CSS.url @geoff.base_url, "losing/frame3.png"
+          $el.html( "<img src=\"#{@geoff.base_url}/losing/frame3.png\">" )
         .delay(150)
         .enqueue ($el)=>
-          $el.css "background-image": CSS.url @geoff.base_url, "losing/frame4.png"
+          $el.html( "<img src=\"#{@geoff.base_url}/losing/frame4.png\">" )
         .delay(150)
 
     @geoff.enqueue =>
@@ -107,16 +110,16 @@ class window.AppAnimator extends Module
       @geoff.indefinitely 900, ()=>
         @geoff
           .enqueue ($el)=>
-            $el.css "background-image": CSS.url @geoff.base_url, "breathing/frame1.png"
+            $el.html( "<img src=\"#{@geoff.base_url}/breathing/frame1.png\">" )
           .delay 200
           .enqueue ($el)=>
-            $el.css "background-image": CSS.url @geoff.base_url, "breathing/frame2.png"
+            $el.html( "<img src=\"#{@geoff.base_url}/breathing/frame2.png\">" )
           .delay 200
           .enqueue ($el)=>
-            $el.css "background-image": CSS.url @geoff.base_url, "breathing/frame3.png"
+            $el.html( "<img src=\"#{@geoff.base_url}/breathing/frame3.png\">" )
           .delay 200
           .enqueue ($el)=>
-            $el.css "background-image": CSS.url @geoff.base_url, "breathing/frame2.png"
+            $el.html( "<img src=\"#{@geoff.base_url}/breathing/frame2.png\">" )
           .delay 200
 
   animate_game_win:()->
